@@ -1,0 +1,26 @@
+{
+  "name": "film_society_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adavid2021/film_society_website.git"
+  },
+  "author": "Chandra Adhikari, Natalia Khan, Aidan David",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adavid2021/film_society_website/issues"
+  },
+  "homepage": "https://github.com/adavid2021/film_society_website#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "csv-parse": "^4.15.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.9"
+  }
+}
