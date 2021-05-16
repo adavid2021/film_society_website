@@ -27,9 +27,7 @@ const applicantSchema = {
 
 const projectSchema = {
     title: String,
-    role_list: [{
-        role: String
-    }],
+    role_list: String,
     information: [{
         film_date: String,
         paid: String,

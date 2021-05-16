@@ -1,0 +1,31 @@
+.even_row {
+    background-color: darkolivegreen;
+    color: aliceblue;
+}
+
+.odd_row {
+    background-color: darkgreen;
+    color: aliceblue;
+}
+
+.synopsis {
+    padding-top: 10px;
+    font-size: 90%;
+}
+
+.interestbutton {
+
+}
+
+#footer {
+    background-color: limegreen;
+}
+
+#control_buttons .form-check-input{
+    width: 20px;
+    height: 20px;
+}
+
+#control_buttons .form-check-label{
+
+}

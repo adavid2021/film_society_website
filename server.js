@@ -26,9 +26,7 @@ const applicantSchema = {
 
 const projectSchema = {
     title: String,
-    role_list: [{
-        role: String
-    }],
+    role_list: String,
     information: [{
         film_date: String,
         paid: String,
@@ -86,3 +84,26 @@ app.get('/get_project_by_id',
             }
         });
     });
+
+
+// - post uses body for params
+// - get uses query for params
+// Get projects by selected roles
+app.get("/get_projects_by_filters", (req, res) => {
+
+    Project.find({}, (err,data) => {
+        if (err) {
+            res.send(
+                {
+                    "message": "db_error",
+                    "data": []
+                })
+        } else {
+            res.send(
+                {
+                    "message": "db_error",
+                    "data": data
+                })
+        }
+    });
+});

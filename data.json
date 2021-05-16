@@ -1,7 +1,7 @@
 [
   {
     "title": "Trivia Night",
-    "role_list": [{"role": "actor"}, {"role": "cinematographer"}, {"role": "editor"}],
+    "role_list": "actor cinematographer editor",
     "information": [{
       "film_date": "07-05-2021",
       "paid": "unpaid",

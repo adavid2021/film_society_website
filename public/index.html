@@ -30,33 +30,85 @@
 </head>
 <body class="container">
 
+<section id="control_buttons">
+    <div class="input-group mt-4 mb-3 d-flex justify-content-end">
+        <a href="/project_submission.html" class="btn btn-success rounded">Create a New Project</a>
+    </div>
 
-<section id="header_section">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Clark Movie Club</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link active" aria-current="page" href="/edit_movie.html">New Movie</a>
+    <div class="row justify-content-center">
+        <div class="card text-white bg-success mt-3 mb-3" style="max-width: 60%;">
+            <div class="card-body">
+                <h5 class="card-title">filter projects by available roles</h5>
+                <p class="card-text">Select the roles which you are interested in.</p>
+
+                <div class="row justify-content-between py-3">
+                    <div class="col-lg-2">
+                        <div class="form-check">
+                            <input class="form-check-input pl-2" type="checkbox" id="actor_checkbox" value="actor">
+                            <label class="form-check-label pr-2" for="actor_checkbox">Actor</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input pl-2" type="checkbox" id="director_checkbox" value="director">
+                            <label class="form-check-label pr-2" for="director_checkbox">Director</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox" value="cinematographer">
+                            <label class="form-check-label pr-2" for="cinematographer_checkbox">Cinematographer</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox" value="producer">
+                            <label class="form-check-label pr-2" for="producer_checkbox">Producer</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox" value="editor">
+                            <label class="form-check-label pr-2" for="editor_checkbox">Editor</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox" value="screenwriter">
+                            <label class="form-check-label pr-2" for="screenwriter_checkbox">Screenwriter</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="input-group mb-3">
+                        <button class="btn btn-light" onclick="searchProjects()">Search</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+
+    </div>
+
+
 </section>
 
-<section id="movie_section">
-    <div class="row">
+<section id="project_section">
+    <div class="row justify-content-center">
         <div class="col-10">
-            <ul id="movie_list" class="list-group">
+            <ul id="project_list" class="list-group">
 
             </ul>
         </div>
     </div>
 </section>
+
+<section id="footer">
+    <p>
+        <script>
+            function getYear(){
+                return (new Date().getFullYear())
+            }
+            $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
+    </script>
+    </p>
+
+</section>
 </body>
+
+
+
 </html>
