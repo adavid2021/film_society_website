@@ -26,37 +26,53 @@
     <!--    Google jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="js/project_detail.js.js" defer></script>
+    <script src="js/project_detail.js" defer></script>
 </head>
-<body class="container">
+<body class="container" style="background-color: darkseagreen">
 
 
 <section id="header_section">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Clark Movie Club</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link active" aria-current="page" href="/edit_movie.html">New Movie</a>
+    <div class="row pt-4 px-3">
+        <div class="card bg-success text-light">
+            <div class="card-header">
+                <h2 id="title">title</h2>
+            </div>
+            <div class="card-body">
+                <p id="role_details"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="role_section">
+    <div class="row justify-content-center">
+        <div class="col-11">
+            <ul id="role_list" class="list-group text-center justify-content-center py-2" style="width: 80%; padding-left: 20%;">
+
+            </ul>
+            <p class="pad"></p>
+            <div class="card bg-success text-success mb-3">
+                <div class="card-header bg-light" style="font-size: 200%; padding-left: 2%">Applicants</div>
+                <div class="card-body text-light">
+                    <ul id="applicant_list" class="list-group">
+
+                    </ul>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
 </section>
 
-<section id="movie_section">
-    <div class="row">
-        <div class="col-10">
-            <ul id="movie_list" class="list-group">
+<section id="footer">
+    <p>
+        <script>
+            function getYear(){
+                return (new Date().getFullYear())
+            }
+            $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
+        </script>
+    </p>
 
-            </ul>
-        </div>
-    </div>
 </section>
 </body>
 </html>

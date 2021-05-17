@@ -29,3 +29,8 @@
 #control_buttons .form-check-label{
 
 }
+
+.pad {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

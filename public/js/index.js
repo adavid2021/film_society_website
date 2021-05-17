@@ -36,12 +36,12 @@ function showList(projects) {
         return `<p>${projects[idx].title}</p>`
     });
 
-    // note that when passing projects to the detail page we use the title as the parameter and replace
+    // note that when passing projects to the detail page we use the title as the parameter and replace spaces with "~"
     $('.mybuttons').append(function (idx) {
         let button_html = ``;
         const list = projects[idx].role_list.split(" ");
         list.forEach(role=>{
-            button_html+=`<button class="btn btn-outline-dark">${role}</button>`
+            button_html+=`<button class="btn btn-outline-dark" style="background-color: white; color: green; border-color: darkseagreen; border-width: 2px">${role}</button>`
         });
         return button_html
     })
@@ -65,25 +65,25 @@ function showList(projects) {
             return `<p class="synopsis"><b>Synopsis:</b> ${projects[idx].information[0].synopsis}</p>`
     });
 
+    //
+    // $('.year').append(function (idx) {
+    //     return `<p>${cars[idx].year}</p>`
+    // });
+    //
+    // $('.price').append(function (idx) {
+    //     return `<p>${cars[idx].price}</p>`
+    // });
+    //
+    // $('.availability').append(function (idx) {
+    //     return `<p>${cars[idx].avail}</p>`
+    // });
 
-    $('.year').append(function (idx) {
-        return `<p>${cars[idx].year}</p>`
-    });
-
-    $('.price').append(function (idx) {
-        return `<p>${cars[idx].price}</p>`
-    });
-
-    $('.availability').append(function (idx) {
-        return `<p>${cars[idx].avail}</p>`
-    });
-
-    // specific item based on object ID
-    $('.carButton').on('click', function () {
-        const carId = $(this).parents('li').attr("value");
-        // navigates to a client page
-        location.href = "detail.html?car_id=" + carId;
-    });
+    // // specific item based on object ID
+    // $('.carButton').on('click', function () {
+    //     const carId = $(this).parents('li').attr("value");
+    //     // navigates to a client page
+    //     location.href = "detail.html?car_id=" + carId;
+    // });
 }
 
 //when entire page has been loaded execute this function

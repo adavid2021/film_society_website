@@ -1,0 +1,18 @@
+.even_row {
+    background-color: darkolivegreen;
+    color: aliceblue;
+}
+
+.odd_row {
+    background-color: darkgreen;
+    color: aliceblue;
+}
+
+.apply_button {
+    width: 100%;
+}
+
+.pad {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

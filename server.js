@@ -49,6 +49,14 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + "/public/index.html");
 });
 
+app.get('/project_detail', function (req, res) {
+    res.sendFile(__dirname + "/public/project_detail.html");
+});
+
+app.get('/application_submission', function (req, res) {
+    res.sendFile(__dirname + "/public/application_submission.html");
+});
+
 app.get("/get_all_projects", function (req, res) {
     Project.find(function (err, data) {
         if (err) {
