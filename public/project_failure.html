@@ -34,7 +34,7 @@
 <section id="header_section">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Clark Movie Club</a>
+            <a class="navbar-brand" href="#">Film Society</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,19 +42,31 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link active" aria-current="page" href="/edit_movie.html">New Movie</a>
                 </div>
             </div>
         </div>
     </nav>
 </section>
 
-<section id="movie_section">
+<section id="error_section">
     <div class="row">
         <div class="col-10">
-            <ul id="movie_list" class="list-group">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <h3>Failure to post new project!</h3>
+                <h3>A project already exists with this name</h3>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
 
-            </ul>
+<section id="button_section">
+    <div class="row">
+        <div class="col-10">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button">Change Movie Information</button>
+                <button class="btn btn-primary" type="button">Go Back Home</button>
+            </div>
         </div>
     </div>
 </section>
