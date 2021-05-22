@@ -56,6 +56,12 @@ app.get('/project_detail', function (req, res) {
 app.get('/application_submission', function (req, res) {
     res.sendFile(__dirname + "/public/application_submission.html");
 });
+app.get('/app_success', function (req, res) {
+    res.sendFile(__dirname + "/public/app_success.html");
+});
+app.get('/app_failure', function (req, res) {
+    res.sendFile(__dirname + "/public/app_failure.html");
+});
 
 app.get("/get_all_projects", function (req, res) {
     Project.find(function (err, data) {
@@ -115,3 +121,36 @@ app.get("/get_projects_by_filters", (req, res) => {
         }
     });
 });
+
+app.get("/new-applicant", function(
+    req,
+    res){
+    res.sendFile(__dirname+"/new-applicant")
+});
+
+
+
+let applicantList=[]
+app.post("/new-applicant", function (req, res) {
+    const new_applicant = {
+        "applicant_name": req.body.applicants.applicant_name,
+        "applicant_email": req.body.applicants.applicant_email,
+        "applicant_qualifications": req.body.applicants.applicant_qualifications,
+        "preferred_roles": req.body.applicants.preferred_roles,
+
+    }
+    applicantList.push(new_applicant);
+    const applicantJSON = JSON.stringify(new_applicant);
+    console.log('new applicant' + applicantJSON);
+    fs.writeFile(__dirname + "/data.json", applicantJSON, function (err) {
+        if (err) {
+            res.redirect("/app_failure");
+        } else {
+            res.redirect("/app_success");
+        }
+    });
+
+
+
+});
+

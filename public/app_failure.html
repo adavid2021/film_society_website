@@ -29,14 +29,21 @@
     <script src="js/app_failure.js" defer></script>
 </head>
 
-<div id="application_submission" style="background-color: #e5989b">
+<div id="application_submission" style="background-color: #e5989b; height: 80%">
     <h1>The application failed to submit. There already exists a submission for this position under the given name</h1>
 </div>
-<div>
-    <a class="btn btn-danger" id="btn_change" href="/application_submission">Change Information</a>
-    <br>
-    <a class="btn btn-danger" id=btn_goBack" href="/">Go back</a>
-</div>
+
+<section id="button_section">
+    <div class="row">
+        <div class="col-10">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a class="btn btn-danger" id="btn_change" href="/application_submission">Change Information</a>
+                <a class="btn btn-danger" id=btn_goBack" href="/">Go back</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 </div>
 </body>
