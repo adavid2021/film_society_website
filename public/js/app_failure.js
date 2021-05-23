@@ -1,0 +1,6 @@
+function goBack(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const project_id = urlParams.get("p_id");
+    location.href = "/application_submission?p_id=" + project_id
+}

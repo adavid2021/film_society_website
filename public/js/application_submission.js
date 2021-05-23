@@ -11,7 +11,13 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const error_message = urlParams.get("error_message");
+const project_id = urlParams.get("p_id");
 const input = JSON.parse(urlParams.get("input")); // converting back into json
+
+// invisible project id field
+if (project_id) {
+    $('#project_id').val(project_id);
+}
 
 if (error_message) {
 
@@ -33,10 +39,7 @@ if (error_message) {
     }
 
     $('#error_message').text(output.substring(0, output.length - 2));
-
-
 }
-
 
 
 $('form').on('submit', function () {
@@ -46,60 +49,44 @@ $('form').on('submit', function () {
         $(this).removeClass('is-invalid text-danger')
     });
 
-    $.each($('input,.text,textarea'), function () {
-        console.log($(this));
-        if (!$(this).val() && !("checkBox")) {
-            errorMessage = `${$(this).parent().find('label').text()} cannot be empty`;
-            $(this).addClass('is-invalid text-danger');
-            $('#error_message').text(errorMessage);
-            return false;
-        }
-    });
-        if(!$('#applicant_name,textarea').val()){
-            errorMessage="Name cannot be empty."
-            // $("#checkBox").addClass('is-invalid text-danger');
-            $('#error_message').text(errorMessage);
-
-            return false;
-        }
-    if(!$('#applicant_email,textarea').val()){
-        errorMessage="Email cannot be empty."
-        // $("#checkBox").addClass('is-invalid text-danger');
-        $('#error_message').text(errorMessage);
-
-        return false;
-    }
-    if(!$('#applicant_qualifications,textarea').val()){
-        errorMessage="Please provide your qualifications."
-        // $("#checkBox").addClass('is-invalid text-danger');
+    if (!$('#applicant_name,textarea').val()) {
+        errorMessage = "Name cannot be empty."
+        $('#applicant_name').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
 
         return false;
     }
 
-
-    if(!$('#preferred_roles,textarea').val()){
-        errorMessage="Provide some of your preferred roles"
-        // $("#checkBox").addClass('is-invalid text-danger');
+    if (!$('#applicant_email,textarea').val()) {
+        errorMessage = "Email cannot be empty."
+        $('#applicant_email').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
 
         return false;
     }
-        if(!($('#checkBox').is(':checked'))){
-            errorMessage="You must agree to submit the application."
-            $("#checkBox").addClass('is-invalid text-danger');
-            $('#error_message').text(errorMessage);
 
-            return false;
-        }
-
-
-    if (errorMessage !== null) {
+    if (!$('#applicant_qualifications,textarea').val()) {
+        errorMessage = "Please provide your qualifications."
+        $('#applicant_qualifications').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
+
         return false;
     }
 
-    //attach invisible form input to update the movie rather than add it
+    if (!$('#preferred_roles,textarea').val()) {
+        errorMessage = "Provide some of your preferred roles"
+        $('#preferred_roles').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+
+    if (!($('#checkBox').is(':checked'))) {
+        errorMessage = "You must agree to submit the application."
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
 
 });
 

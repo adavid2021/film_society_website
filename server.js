@@ -105,7 +105,7 @@ app.get('/get_project_by_id',
 // Get projects by selected roles
 app.get("/get_projects_by_filters", (req, res) => {
 
-    Project.find({}, (err,data) => {
+    Project.find({}, (err, data) => {
         if (err) {
             res.send(
                 {
@@ -122,68 +122,60 @@ app.get("/get_projects_by_filters", (req, res) => {
     });
 });
 
-app.get("/new-applicant", function(
-    req,
-    res){
-    res.sendFile(__dirname+"/new-applicant")
-});
-
-
-
-let applicantList=[]
 app.post("/new-applicant", function (req, res) {
-    const new_applicant = {
-        "applicant_name": req.body.applname,
-        "applicant_email": req.body.email,
-        "applicant_qualifications": req.body.qualifications,
-        "preferred_roles": req.body.preferredRoles,
+    let current_project = {};
 
-    }
-    applicantList.push(new_applicant);
+    Project.find({"_id": req.body.project_id}, function (err, data) {
+        current_project = data[0]
 
-    // const applicantJSON = JSON.stringify(new_applicant);
-    // console.log('new applicant' + applicantJSON);
-    // fs.writeFile(__dirname + "/data.json", applicantJSON, function (err) {
-    //     if (err) {
-    //         res.redirect("/app_failure");
-    //     } else {
-    //         res.redirect("/app_success");
-    //     }
-    // });
-    console.log(Project.distinct("applicants.applicant_name"));
-    if (req.body._id) {
-        Project.updateOne(
-            {_id: req.body._id},
-            {$set: new_applicant},
-            {runValidators: true},
-            (err, info) => {
-                if (err) {
-                    console.log(err.message);
-                    //we will need this error part for the homework
-                    //identify which field is incorrect after redirect
-                    //cannot have line breaks
-                    console.log(JSON.stringify(err.errors));
-                    res.redirect(`/edit.html?error_message=${JSON.stringify(err.errors)}&input=${JSON.stringify(new_applicant)}&car_id=${req.body._id}`);
-                } else {
-                    console.log(info);
-                    res.redirect(`/detail.html?car_id=${req.body._id}`);
-                }
-            }
-        )
-    } else {
-        //car does not exist so we create a new car
-        const nc = new Car(new_applicant);
-        nc.save(function (err, new_car) {
-            if (err) {
-                console.log(err["message"]);
-                res.redirect("/edit.html?error_message="
-                    + err["message"] + "&input=" + JSON.stringify(new_applicant));
-            } else {
-                console.log(new_car._id);
-                res.redirect("/detail.html?car_id=" + new_car._id);
+        let app_name_list = [];
+        let applicant_list = [];
+
+        // each applicant in the foreach loop is an applicant object
+        current_project.applicants.forEach(applicant => {
+            applicant_list.push(applicant);
+            if (!app_name_list.includes(applicant.applicant_name)) {
+                app_name_list.push(applicant.applicant_name);
             }
         });
-    }
 
+        if (app_name_list.includes(req.body.applicant_name)) {
+            res.redirect("/app_failure?p_id=" + req.body.project_id);
+        } else {
+            // unique applicant name
+            const new_applicant = {
+                "applicant_name": req.body.applicant_name,
+                "applicant_email": req.body.applicant_email,
+                "applicant_qualifications": req.body.applicant_qualifications,
+            }
+
+            let roles_list = [];
+            req.body.preferred_roles.split(" ").forEach(role => {
+                roles_list.push({role: role});
+            });
+
+            // setting preferred roles to applicant object
+            new_applicant["preferred_roles"] = roles_list;
+
+            // adding new applicant object to applicant list
+            applicant_list.push(new_applicant);
+
+            Project.updateOne(
+                {_id: req.body.project_id},
+                {$set: {applicants: applicant_list}},
+                {runValidators: true},
+                (err, info) => {
+                    if (err) {
+                        console.log(err.message);
+                        console.log(JSON.stringify(err.errors));
+                        res.redirect(`/edit.html?error_message=${JSON.stringify(err.errors)}&input=${JSON.stringify(new_applicant)}&car_id=${req.body._id}`);
+                    } else {
+                        console.log(info);
+                        // res.redirect(`/detail.html?car_id=${req.body._id}`);
+                        res.redirect("/app_success");
+                    }
+                });
+        }
+    });
 });
 

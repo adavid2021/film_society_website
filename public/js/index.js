@@ -64,26 +64,6 @@ function showList(projects) {
         .after(function (idx) {
             return `<p class="synopsis"><b>Synopsis:</b> ${projects[idx].information[0].synopsis}</p>`
     });
-
-    //
-    // $('.year').append(function (idx) {
-    //     return `<p>${cars[idx].year}</p>`
-    // });
-    //
-    // $('.price').append(function (idx) {
-    //     return `<p>${cars[idx].price}</p>`
-    // });
-    //
-    // $('.availability').append(function (idx) {
-    //     return `<p>${cars[idx].avail}</p>`
-    // });
-
-    // // specific item based on object ID
-    // $('.carButton').on('click', function () {
-    //     const carId = $(this).parents('li').attr("value");
-    //     // navigates to a client page
-    //     location.href = "detail.html?car_id=" + carId;
-    // });
 }
 
 //when entire page has been loaded execute this function
@@ -112,7 +92,7 @@ function filterData(data, filters){
         if (filters.includes("actor") && d.role_list.includes("actor")){
             newData.push(d)
         }
-        if (filters.includes("writer") && d.role_list.includes("cinematographer")){
+        if (filters.includes("cinematographer") && d.role_list.includes("cinematographer")){
             newData.push(d)
         }
         if (filters.includes("director") && d.role_list.includes("director")){
