@@ -133,24 +133,57 @@ app.get("/new-applicant", function(
 let applicantList=[]
 app.post("/new-applicant", function (req, res) {
     const new_applicant = {
-        "applicant_name": req.body.applicants.applicant_name,
-        "applicant_email": req.body.applicants.applicant_email,
-        "applicant_qualifications": req.body.applicants.applicant_qualifications,
-        "preferred_roles": req.body.applicants.preferred_roles,
+        "applicant_name": req.body.applname,
+        "applicant_email": req.body.email,
+        "applicant_qualifications": req.body.qualifications,
+        "preferred_roles": req.body.preferredRoles,
 
     }
     applicantList.push(new_applicant);
-    const applicantJSON = JSON.stringify(new_applicant);
-    console.log('new applicant' + applicantJSON);
-    fs.writeFile(__dirname + "/data.json", applicantJSON, function (err) {
-        if (err) {
-            res.redirect("/app_failure");
-        } else {
-            res.redirect("/app_success");
-        }
-    });
 
-
+    // const applicantJSON = JSON.stringify(new_applicant);
+    // console.log('new applicant' + applicantJSON);
+    // fs.writeFile(__dirname + "/data.json", applicantJSON, function (err) {
+    //     if (err) {
+    //         res.redirect("/app_failure");
+    //     } else {
+    //         res.redirect("/app_success");
+    //     }
+    // });
+    console.log(Project.distinct("applicants.applicant_name"));
+    if (req.body._id) {
+        Project.updateOne(
+            {_id: req.body._id},
+            {$set: new_applicant},
+            {runValidators: true},
+            (err, info) => {
+                if (err) {
+                    console.log(err.message);
+                    //we will need this error part for the homework
+                    //identify which field is incorrect after redirect
+                    //cannot have line breaks
+                    console.log(JSON.stringify(err.errors));
+                    res.redirect(`/edit.html?error_message=${JSON.stringify(err.errors)}&input=${JSON.stringify(new_applicant)}&car_id=${req.body._id}`);
+                } else {
+                    console.log(info);
+                    res.redirect(`/detail.html?car_id=${req.body._id}`);
+                }
+            }
+        )
+    } else {
+        //car does not exist so we create a new car
+        const nc = new Car(new_applicant);
+        nc.save(function (err, new_car) {
+            if (err) {
+                console.log(err["message"]);
+                res.redirect("/edit.html?error_message="
+                    + err["message"] + "&input=" + JSON.stringify(new_applicant));
+            } else {
+                console.log(new_car._id);
+                res.redirect("/detail.html?car_id=" + new_car._id);
+            }
+        });
+    }
 
 });
 

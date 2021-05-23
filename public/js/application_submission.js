@@ -1,88 +1,106 @@
-let project = {
-    "title": "Trivia Night",
-    "role_list": "actor cinematographer editor",
-    "information": [{
-        "film_date": "07-05-2021",
-        "paid": "unpaid",
-        "creator_name": "Natalia",
-        "creator_email": "some_email@gmail.com",
-        "synopsis": "blkajwdba.msndvawnvdlajwvdnabsvd,nbva,nwbdv,nbavw,ndbv,nasbdv,nbvasdn,bv,nbasdv."
-    }],
-    "role_descriptions": "I am looking for someone to play {describe role here} role.",
-    "applicants": [{
-        "applicant_name": "Joe",
-        "applicant_email": "joe@gmail.com",
-        "applicant_qualifications": "I am a very good actor please hire me.",
-        "preferred_roles": [{"role": "actor"}, {"role": "editor"}, {"role": "director"}]
-    },
-        {
-            "applicant_name": "Sue",
-            "applicant_email": "sue@gmail.com",
-            "applicant_qualifications": "I am the best editor at Clark, that's what my friend said.",
-            "preferred_roles": [{"role": "editor"}, {"role": "actor"}, {"role": "director"}]
-        }]
+// function fillApplicant(applicant) {
+//     // $('#checkbox').prop("checked", car.avail === "available");
+//     // $('#sold').prop("checked", car.avail === "sold");
+//     $('#applicant_name').val(applicant.applicant_name);
+//     $('#applicant_email').val(applicant.applicant_email);
+//     $('#applicant_qualifications').val(applicant.applicant_qualifications);
+//     $('#preferred_roles').val(applicant.preferred_roles);
+//
+// }
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const error_message = urlParams.get("error_message");
+const input = JSON.parse(urlParams.get("input")); // converting back into json
+
+if (error_message) {
+
+    if (error_message.includes('applicant_name')) {
+        $('#applicant_name').addClass('is-invalid text-danger');
+    }
+    if (error_message.includes('applicant_email')) {
+        $('#applicant_email').addClass('is-invalid text-danger');
+    }
+    if (error_message.includes('applicant_qualifications')) {
+        $('#applicant_qualifications').addClass('is-invalid text-danger');
+    }
+
+    let errList = error_message.substring(22,).split(',');
+    let output = ""
+
+    for (const err of errList) {
+        output += err.split(':')[1].substring(1,) + ", ";
+    }
+
+    $('#error_message').text(output.substring(0, output.length - 2));
+
+
 }
-let currentIndex = 0;
-
-$('#application_details').empty();
 
 
-function load_application(application){
-    const applicant_list=project.applicants;
-    $('#title').text(project.role_list);
 
+$('form').on('submit', function () {
+    let errorMessage = null
 
-    $('#application_details li')
-        .append("<div class='row justify-content-between'></div>");
-
-    $('#application_details .row')
-        .append(
-            '  <div class="card-body">' +
-            '  </div>' +
-            '</div>')
-
-
-    $('#application_details .card-body').append(function(){
-    return('<div class="row">'+
-        '<div class="col-lg-8 justify-content-center">'+
-        `<div class="row"> <div class="col-2">Name:</div> <div class="col-2" id="applicant_name" ${applicant_list.applicant_name}></div></div>`+
-        `<div class="row"> <div class="col-2">Email:</div> <div class="col-2" id="applicant_email" ${applicant_list.applicant_email}></div></div>`+
-        `<div class="row"> <div class="col-4">Qualifications:</div> <div class="col-4" id="applicant_email" ${applicant_list.applicant_email}></div></div>`+
-        `<div class="row"> <div class="col-4">Preferred Roles:</div> <div class="col-4" id="applicant_email" ${applicant_list.preferred_roles}></div></div>`+
-        '</div>'+
-        '<div class="col-lg-2 justify-content-center">'+
-        `<input type="checkbox" id="checkBox" value="The information I have provided is accurate to the extend of my knowledge">`+
-        '</div>'+
-        '</div class="col-lg-2 justify-content-center">'+
-        `<button type="button" className="btn btn-primary application_submission">Submit Information</button>`+
-        '</div>'+
-        '</div>'
-
-    )
-})
-
-    $('application_submission').on('click', function () {
-        const applicant = $('#application_details').val();
-        console.log(applicant);
-        $.post('/new-applicant', {message: message}).done(function () {
-            location.reload();
-        });
+    $.each($('input,textarea'), function () {
+        $(this).removeClass('is-invalid text-danger')
     });
 
-}
+    $.each($('input,.text,textarea'), function () {
+        console.log($(this));
+        if (!$(this).val() && !("checkBox")) {
+            errorMessage = `${$(this).parent().find('label').text()} cannot be empty`;
+            $(this).addClass('is-invalid text-danger');
+            $('#error_message').text(errorMessage);
+            return false;
+        }
+    });
+        if(!$('#applicant_name,textarea').val()){
+            errorMessage="Name cannot be empty."
+            // $("#checkBox").addClass('is-invalid text-danger');
+            $('#error_message').text(errorMessage);
 
-$(document).ready(function () {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const project_id = urlParams.get('project_id');
-    console.log(project_id);
-    if (project_id) {
-        $.getJSON('/get_project_by_id?project_id=' + project_id).done(function (data) {
-            console.log(data);
-            if (data["message"] === "success") {
-                project = data["data"];
-                load_application(project);
-            }
-        });
+            return false;
+        }
+    if(!$('#applicant_email,textarea').val()){
+        errorMessage="Email cannot be empty."
+        // $("#checkBox").addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
     }
+    if(!$('#applicant_qualifications,textarea').val()){
+        errorMessage="Please provide your qualifications."
+        // $("#checkBox").addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+
+
+    if(!$('#preferred_roles,textarea').val()){
+        errorMessage="Provide some of your preferred roles"
+        // $("#checkBox").addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+        if(!($('#checkBox').is(':checked'))){
+            errorMessage="You must agree to submit the application."
+            $("#checkBox").addClass('is-invalid text-danger');
+            $('#error_message').text(errorMessage);
+
+            return false;
+        }
+
+
+    if (errorMessage !== null) {
+        $('#error_message').text(errorMessage);
+        return false;
+    }
+
+    //attach invisible form input to update the movie rather than add it
+
 });
+
+
