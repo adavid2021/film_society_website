@@ -1,0 +1,35 @@
+/*#successText {*/
+/*    max-height: 80%;*/
+/*    !*margin-outside: 90px;*!*/
+/*}*/
+
+.bg-primary{
+    height: 30rem;
+    width: 100%;
+}
+
+.card-body{
+    text-align: center;
+    justify-content: center;
+    margin-top: 25%;
+}
+
+.success-card{
+    font-family: sans-serif;
+    margin-bottom: 30%;
+}
+
+.success-card h5{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.card-container{
+    margin-top: 10%;
+}
+.success-btn{
+    justify-content: center;
+    align-content: center;
+}
+
+
