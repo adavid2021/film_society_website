@@ -47,95 +47,62 @@
         </div>
     </nav>
 
-<section style="margin-top: 2%">
-    <form action="/new-applicant" method="post">
+    <section style="margin-top: 2%">
+        <form action="/new-applicant" method="post">
 
-        <div class="mb-3">
-            <label for="applicant_name" class="form-label">Name</label>
-            <input type="text" class="form-control text" id="applicant_name" placeholder="First Name Last Name" name="applicant_name">
-        </div>
-        <div class="mb-3">
-            <label for="applicant_email" class="form-label">Email</label>
-            <input type="text" class="form-control text" id="applicant_email" placeholder="name@place.com" name="applicant_email">
-        </div>
-        <div class="mb-3">
-            <label for="applicant_qualifications" class="form-label">Qualifications</label>
-            <input type="text" class="form-control text" id="applicant_qualifications" placeholder="Provide your qualifications here" name="applicant_qualifications">
-        </div>
-        <div class="mb-3">
-            <label for="preferred_roles" class="form-label">Preferred Roles</label>
-            <input class="form-control text" style="width: 300px;" placeholder="write your preferred roles (separated by spaces)" type="text" name="preferred_roles" id="preferred_roles">
-        </div>
+            <div class="mb-3">
+                <label for="applicant_name" class="form-label">Name</label>
+                <input type="text" class="form-control text" style="width: 200px;" id="applicant_name"
+                       placeholder="First and Last name" name="applicant_name">
+            </div>
+            <div class="mb-3">
+                <label for="applicant_email" class="form-label">Email</label>
+                <input type="text" class="form-control text" style="width: 200px;" id="applicant_email"
+                       placeholder="name@place.domain" name="applicant_email">
+            </div>
+            <div class="mb-3">
+                <label for="applicant_qualifications" class="form-label">Qualifications</label>
+                <input type="text" class="form-control text" id="applicant_qualifications"
+                       placeholder="Provide your qualifications here" name="applicant_qualifications">
+            </div>
+            <div class="mb-3">
+                <label for="preferred_roles" class="form-label">Preferred Roles</label>
+                <input class="form-control text" placeholder="write your preferred roles (separated by spaces)"
+                       type="text" name="preferred_roles" id="preferred_roles">
+            </div>
 
-        <div class="mb-3">
-            <p>The information I have provided is accurate to the extend of my knowledge </p>
-        </div>
-        <div class="mb-3">
+            <div class="mb-3">
+                <p>The information I have provided is accurate to the extend of my knowledge </p>
+            </div>
+            <div class="mb-3">
 
-            <input type="checkbox" id="checkBox">
-            <label for="checkBox" class="form-label">I agree!</label>
-        </div>
-        <div class="mb-3">
-            <p id="error_message" style="color: red"></p>
-        </div>
+                <input type="checkbox" id="checkBox">
+                <label for="checkBox" class="form-label">I agree!</label>
+            </div>
+            <div class="mb-3">
+                <p id="error_message" style="color: red"></p>
+            </div>
 
-        <input type="hidden" name="project_id" id="project_id">
-
-
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary" style="width: 20%">Submit Application</button>
-        </div>
-    </form>
-</section>
-
-<!--<section id="application_details">-->
-<!--    <div class="row justify-content-center">-->
-
-<!--            <p class="pad"></p>-->
-<!--            <div class="card bg-success text-success mb-3">-->
-<!--                <div class="card-header bg-light" style="font-size: 200%; padding-left: 2%">Application Form </div>-->
-<!--                <div class="card-body text-light">-->
-<!--                    <form id="applicant_list" class="list-group">-->
-<!--&lt;!&ndash;                        <div>&ndash;&gt;-->
-<!--                            <label for="applicant_name" class="form-label">Name:</label>-->
-<!--                            <input type="text" name="name" value="" id="applicant_name" class="form-control">-->
-
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-
-<!--                            <div>-->
-<!--                                <label for="applicant_email" class="form-label">Email:</label>-->
-<!--                                <input type="text" name="email" value="" id="applicant_email" class="form-control">-->
-
-<!--                            </div>-->
-<!--                        <div>-->
-<!--                            <label for="applicant_qualification" class="form-label">Qualification:</label>-->
-<!--                            <input type="text" name="qualification" value="" id="applicant_qualification" class="form-control">-->
-
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <input type="checkbox" id="checkbox" name="agree" value="Boat">-->
-<!--                            <label for="checkbox"> The information I have provided is accurate to the extend of my knowledge.</label><br><br>-->
-<!--                            <button type="button" class="btn btn-primary">Submit Information</button>-->
-<!--                        </div>-->
+            <input type="hidden" name="project_id" id="project_id">
 
 
-<!--                    </form>-->
-<!--                </div>-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" style="width: 20%">Submit Application</button>
+            </div>
+        </form>
+    </section>
 
-<section id="footer">
-    <p>
-        <script>
-            function getYear(){
-                return (new Date().getFullYear())
-            }
-            $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
-        </script>
-    </p>
+    <section id="footer">
+        <p>
+            <script>
+                function getYear() {
+                    return (new Date().getFullYear())
+                }
 
-</section>
+                $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
+            </script>
+        </p>
+
+    </section>
 </body>
 </html>

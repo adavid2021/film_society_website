@@ -65,6 +65,16 @@ $('form').on('submit', function () {
         return false;
     }
 
+    var email_pattern = /[a-z]+@[a-z]+\.[a-z]+/i
+    // the email must follw the above standard email pattern
+    if (!(email_pattern.test($('#applicant_email,textarea').val()))) {
+        errorMessage = "The email field must have correct email formatting."
+        $('#applicant_email').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+
     if (!$('#applicant_qualifications,textarea').val()) {
         errorMessage = "Please provide your qualifications."
         $('#applicant_qualifications').addClass('is-invalid text-danger');
@@ -73,8 +83,25 @@ $('form').on('submit', function () {
         return false;
     }
 
+    if ($('#applicant_qualifications,textarea').val().length < 3) {
+        errorMessage = "The qualifications filed must be at least 3 characters long."
+        $('#applicant_qualifications').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+
     if (!$('#preferred_roles,textarea').val()) {
         errorMessage = "Provide some of your preferred roles"
+        $('#preferred_roles').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+
+    if (!(formattedCorrectly())) {
+        errorMessage = "In the preferred roles field, only include roles in this list: " +
+            "actor, cinematographer, editor, director, producer, screenwriter (separated by spaces)"
         $('#preferred_roles').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
 
@@ -90,4 +117,23 @@ $('form').on('submit', function () {
 
 });
 
+// returns false if the preferred roles section is formatted incorrectly, otherwise true
+function formattedCorrectly() {
+    const user_input = $('#preferred_roles,textarea').val();
+    const input_string = user_input.split(" ");
+    const correct_role_strings =
+        ["actor", "Actor", "cinematographer", "Cinematographer",
+            "editor", "Editor", "director", "Director", "producer", "Producer", "screenwriter",
+            "Screenwriter"]
 
+    let i_string_list = [];
+
+    input_string.forEach(input => {
+        correct_role_strings.forEach(role => {
+            if (input === role) {
+                i_string_list.push(input);
+            }
+        })
+    })
+    return (i_string_list === input_string);
+}
