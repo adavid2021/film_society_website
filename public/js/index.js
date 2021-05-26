@@ -23,7 +23,7 @@ function showList(projects) {
     });
 
     $('#project_list .row')
-        .append('<div class="card text-white bg-success mb-3">' +
+        .append('<div class="card text-white" style="background-color: var(--cadet)">' +
             '  <div class="card-body">' +
             '    <h5 class="card-title title"></h5>' +
             '    <div class="row justify-content-between"></div>' +
@@ -41,12 +41,12 @@ function showList(projects) {
         let button_html = ``;
         const list = projects[idx].role_list.split(" ");
         list.forEach(role=>{
-            button_html+=`<button class="btn btn-outline-dark" style="background-color: white; color: var(--burnt-sienna); border-color: darkseagreen; border-width: 2px">${role}</button>`
+            button_html+=`<button class="btn btn-outline-dark" style="background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</button>`
         });
         return button_html
     })
         .after(function (idx) {
-            return `<a href="/project_detail?project_id=${projects[idx]._id}" class="btn btn-outline-light interestbutton">I am interested!</a>`
+            return `<a href="/project_detail?project_id=${projects[idx]._id}" class="btn btn-outline-light interestbutton" style="background-color: var(--burnt-sienna)">I am interested!</a>`
         })
         .after(function (idx) {
             return `<p class="more_info"><b>Creator email:</b> ${projects[idx].information[0].creator_email}</p>`

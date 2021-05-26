@@ -2,7 +2,9 @@
 /*    max-height: 80%;*/
 /*    !*margin-outside: 90px;*!*/
 /*}*/
-
+body {
+    background-color: var(--burnt-sienna);
+}
 .bg-primary{
     height: 30rem;
     width: 60%;

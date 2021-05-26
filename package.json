@@ -1,5 +1,5 @@
 {
-  "name": "film_society_website",
+  "name": "n",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -19,8 +19,11 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "csv-parse": "^4.15.4",
+    "excess": "^0.2.6",
     "express": "^4.17.1",
-    "mongoose": "^5.12.10"
+    "mongodb": "^3.6.8",
+    "mongoose": "^5.12.11"
   },
+  "devDependencies": {},
   "description": ""
 }

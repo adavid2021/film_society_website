@@ -28,7 +28,7 @@
 
     <script src="js/project_submission.js" defer></script>
 </head>
-<body class="container" style="background-color: darkseagreen">
+<body class="container" style="background-color: var(--columbia-blue)">
 
 
 <section id="header_section">
@@ -55,13 +55,15 @@
         <form action="/new-project" method="post">
 
             <div class="mb-3">
-                <label for="name" class="form-label">Project Name</label>
+                <label for="name" class="form-label"><b>Project Name:</b></label>
                 <input type="text" class="form-control text" style="width: 200px;" id="name"
                        placeholder="Project Name" name="name">
             </div>
+<div>
+
 
             <!--            Checkboxes for Roles-->
-            <label>Roles: </label>
+            <label><b>Roles: </b></label>
 
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="actor_ch">
@@ -92,22 +94,22 @@
                 <input class="form-check-input" type="checkbox" id="screenwriter_ch">
                 <label class="form-check-label" for="screenwriter_ch">Screenwriter</label>
             </div>
-
-            <div class="mb-3">
-                <label for="creator_name" class="form-label">Creator Name:</label>
+</div>
+            <div class="mb-4 mt-3">
+                <label for="creator_name" class="form-label"><b>Creator Name:</b></label>
                 <input type="text" class="form-control text" style="width: 200px;" id="creator_name"
                        placeholder="Creator Name" name="creator_name">
             </div>
 
             <div class="mb-3">
-                <label for="creator_email" class="form-label">Creator Email</label>
+                <label for="creator_email" class="form-label"><b>Creator Email:</b></label>
                 <input type="text" class="form-control text" id="creator_email"
                        placeholder="name@place.domain" name="creator_email">
             </div>
 
             <!--            shooting date -->
             <div class="mb-3">
-                <label for="shooting_date">Shooting Start Date:</label>
+                <label for="shooting_date"><b>Shooting Start Date:</b></label>
                 <input id="shooting_date" type="date" name="shooting_date" value="">
             </div>
 
@@ -123,9 +125,9 @@
 
             <!--            for synopsis and Role Descriptions-->
             <div class="mb-3">
-                <label for="synopsis">Synopsis:</label><br>
+                <label for="synopsis"><b>Synopsis:</b></label><br>
                 <textarea id="synopsis" name="synopsis" rows="6" cols="180"></textarea><br>
-                <label for="Role_des">Role Descriptions:</label><br>
+                <label for="Role_des"><b>Role Descriptions:</b></label><br>
                 <textarea id="Role_des" name="Role_des" rows="6" cols="180"></textarea><br>
             </div>
 
@@ -138,7 +140,7 @@
 
 
             <div class="mb-3">
-                <button type="submit" class="btn btn-primary" style="width: 20%">Submit Application</button>
+                <button type="submit" class="btn btn-light" style="width: 20%; background-color: var(--burnt-sienna); color: white" >Submit Application</button>
             </div>
         </form>
     </section>

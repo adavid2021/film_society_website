@@ -28,7 +28,7 @@
 
     <script src="js/application_submission.js" defer></script>
 </head>
-<body class="container" style="background-color: darkseagreen">
+<body class="container" style="background-color: var(--columbia-blue)">
 
 
 <section id="header_section">
@@ -72,12 +72,9 @@
             </div>
 
             <div class="mb-3">
-                <p>The information I have provided is accurate to the extend of my knowledge </p>
-            </div>
-            <div class="mb-3">
 
                 <input type="checkbox" id="checkBox">
-                <label for="checkBox" class="form-label">I agree!</label>
+                <label for="checkBox" class="form-label">The information I have provided is accurate to the extend of my knowledge.</label>
             </div>
             <div class="mb-3">
                 <p id="error_message" style="color: red"></p>
@@ -85,14 +82,13 @@
 
             <input type="hidden" name="project_id" id="project_id">
 
-
             <div class="mb-3">
-                <button type="submit" class="btn btn-primary" style="width: 20%">Submit Application</button>
+                <button type="submit" class="btn btn-light" style="width: 20%; background-color: var(--burnt-sienna); color: white" >Submit Application</button>
             </div>
         </form>
     </section>
 
-    <section id="footer">
+    <section id="footer" style="color: white">
         <p>
             <script>
                 function getYear() {
