@@ -71,6 +71,18 @@ $('form').on('submit', function () {
 
         return false;
     }
+
+    var email_pattern = /[a-z]+@[a-z]+\.[a-z]+/i
+    // the email must follw the above standard email pattern
+    if (!(email_pattern.test($('#creator_email,textarea').val()))) {
+        errorMessage = "The email field must have correct email formatting."
+        $('#creator_email').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+    
+
     if (!$('#shooting_date,textarea').val()) {
         errorMessage = "Shooting Date cannot be empty."
         $('#shooting_date').addClass('is-invalid text-danger');
@@ -79,14 +91,14 @@ $('form').on('submit', function () {
         return false;
     }
     if (!$('#synopsis,textarea').val()) {
-        errorMessage = "Shooting Date cannot be empty."
+        errorMessage = "Add some synopsis about your project."
         $('#synopsis').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
 
         return false;
     }
     if (!$('#Role_des,textarea').val()) {
-        errorMessage = "Shooting Date cannot be empty."
+        errorMessage = "Please provide some role descriptions of your project."
         $('#Role_des').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
 
