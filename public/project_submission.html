@@ -48,213 +48,191 @@
     </nav>
 
 
-    <section id="control_buttons">
 
-        <div class="row justify-content-center">
-            <div class="card text-white bg-success mt-3 mb-3" style="max-width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title">filter projects by available roles</h5>
-                    <p class="card-text">Select the roles which you are interested in.</p>
 
-                    <div class="row justify-content-between py-3">
-                        <div class="col-2">
-                            <div class="form-check">
-                                <input class="form-check-input pl-2" type="checkbox" id="actor_checkbox" value="actor">
-                                <label class="form-check-label pr-2" for="actor_checkbox">Actor</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="director_checkbox" value="director">
-                                <label class="form-check-label pr-2" for="director_checkbox">Director</label>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox" value="cinematographer">
-                                <label class="form-check-label pr-2" for="cinematographer_checkbox">Cinematographer</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox" value="producer">
-                                <label class="form-check-label pr-2" for="producer_checkbox">Producer</label>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox" value="editor">
-                                <label class="form-check-label pr-2" for="editor_checkbox">Editor</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox" value="screenwriter">
-                                <label class="form-check-label pr-2" for="screenwriter_checkbox">Screenwriter</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="input-group mb-3">
-                            <button class="btn btn-light" onclick="searchProjects()">Search</button>
-                        </div>
-                    </div>
-                </div>
+<!--Changes from Application.html-->
+
+
+    <section style="margin-top: 2%">
+        <form action="/new-project" method="post">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Project Name</label>
+                <input type="text" class="form-control text" style="width: 200px;" id="name"
+                       placeholder="Project Name" name="name">
             </div>
-        </div>
+<!--            Checkboxes for Roles-->
+            <label><b>Roles: </b></label>
+
+
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Actor</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Cinematographer</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">Editor</label>
+            </div>
+            <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                <label class="form-check-label" for="inlineCheckbox4">Director</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                <label class="form-check-label" for="inlineCheckbox5">Producer</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                <label class="form-check-label" for="inlineCheckbox6">Screenwriter</label>
+            </div>
+            <br>
+
+
+<!--            <label><b>Information: </b></label>-->
+
+            <div class="mb-3">
+                <label for="creator_name" class="form-label">Creator Name:</label>
+                <input type="text" class="form-control text" style="width: 200px;" id="creator_name"
+                       placeholder="Creator Name" name="creator_name">
+            </div>
+            <div class="mb-3">
+                <label for="creator_email" class="form-label">Creator Email</label>
+                <input type="text" class="form-control text" id="creator_email"
+                       placeholder="name@place.domain" name="creator_email">
+            </div>
+
+<!--            shooting date -->
+            <div class="mb-3">
+                <label for="shooting_date">Shooting Start Date:</label>
+                <input id="shooting_date" type="date" name="shooting_date" value="">
+            </div>
+
+<!--            paid and Unpaid-->
+            <div class="mb-3">
+
+                <input type="checkbox" id="paidCheckBox">
+                <label for="paidCheckBox" class="form-label">Paid</label>
+            </div>
+            <div class="mb-3">
+
+                <input type="checkbox" id="unPaidCheckBox">
+                <label for="unPaidCheckBox" class="form-label">Unpaid</label>
+            </div>
+
+<!--            for synopsis and Role Descriptions-->
+            <label for="synopsis">Synopsis:</label><br>
+            <textarea id="synopsis" name="synopsis" rows="6" cols="180"></textarea><br>
+            <label for="Role_des">Role Descriptions:</label><br>
+            <textarea id="Role_des" name="Role_des" rows="6" cols="180"></textarea><br>
+
+
+            <div class="mb-3">
+                <p id="error_message" style="color: red"></p>
+            </div>
+
+            <input type="hidden" name="project_id" id="project_id">
+
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" style="width: 20%">Submit Application</button>
+            </div>
+        </form>
     </section>
 
-    <div class="section_div">
-        <h3>New Project</h3>
-        <form action="project_success.html" method="post">
-            <table>
-                <tr>
-                    <th><label for="name">Film Name:</label></th>
-                    <td><input id="name" type="text" name="name" value=""></td>
-                </tr>
-            </table>
-        </form>
-        <label><b>Roles: </b></label>
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="card text-success border-success mb-3" style="width: 70%">-->
-<!--                <div class="card-body">-->
-<!--                    <div class="row justify-content-between py-3">-->
-<!--                        <div class="col-lg-2">-->
-<!--                            <div class="form-check">-->
-<!--                                <input class="form-check-input pl-2" type="checkbox" id="actor_checkbox" value="actor">-->
-<!--                                <label class="form-check-label pr-2" for="actor_checkbox">Actor</label>-->
-<!--                            </div>-->
-<!--                            <div class="form-check form-check-inline">-->
-<!--                                <input class="form-check-input pl-2" type="checkbox" id="director_checkbox" value="director">-->
-<!--                                <label class="form-check-label pr-2" for="director_checkbox">Director</label>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-lg-2">-->
-<!--                            <div class="form-check form-check-inline">-->
-<!--                                <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox" value="cinematographer">-->
-<!--                                <label class="form-check-label pr-2" for="cinematographer_checkbox">Cinematographer</label>-->
-<!--                            </div>-->
-<!--                            <div class="form-check form-check-inline">-->
-<!--                                <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox" value="producer">-->
-<!--                                <label class="form-check-label pr-2" for="producer_checkbox">Producer</label>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-lg-2">-->
-<!--                            <div class="form-check form-check-inline">-->
-<!--                                <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox" value="editor">-->
-<!--                                <label class="form-check-label pr-2" for="editor_checkbox">Editor</label>-->
-<!--                            </div>-->
-<!--                            <div class="form-check form-check-inline">-->
-<!--                                <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox" value="screenwriter">-->
-<!--                                <label class="form-check-label pr-2" for="screenwriter_checkbox">Screenwriter</label>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="col-7 d-flex justify-content-between">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="form-check px-5">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input class="form-check-input" type="checkbox" name="actor" id="actor_project"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       value="actor">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label class="form-check-label" for="actor_project">Actor</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="form-check px-5">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input class="form-check-input pl-3" type="checkbox" name="cinematographer"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       id="cinematographer_project" value="cinematographer">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label class="form-check-label pr-3" for="cinematographer_project">Cinematographer</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="form-check px-5">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input class="form-check-input" type="checkbox" name="editor" id="editor_project"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       value="editor">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label class="form-check-label" for="editor_project">Editor</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="col-7 d-flex justify-content-between">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="form-check px-5">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input class="form-check-input" type="checkbox" name="director" id="director_project"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       value="director">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label class="form-check-label" for="director_project">Director</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="form-check px-5">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input class="form-check-input pl-3" type="checkbox" name="producer"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       id="producer_project" value="producer">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label class="form-check-label pr-3" for="producer_project">Producer</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="form-check px-5">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input class="form-check-input" type="checkbox" name="screenwriter" id="screenwriter_project"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       value="screenwriter">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label class="form-check-label" for="screenwriter_project">Screenwriter</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--                    &lt;!&ndash;                <h5 class="role_name">CANT PREDICT</h5>&ndash;&gt;-->
 
-<!--                </div>-->
-<!--            </div>-->
+
+
+
+
+
+<!--Original Project Submission page-->
+
+<!--    <div class="section_div">-->
+<!--        <h3>New Project</h3>-->
+<!--        <form action="project_success.html" method="post">-->
+<!--            <table>-->
+<!--                <tr>-->
+<!--                    <th><label for="name">Film Name:</label></th>-->
+<!--                    <td><input id="name" type="text" name="name" value=""></td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </form>-->
+<!--        <label><b>Roles: </b></label>-->
+
+
+
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">-->
+<!--            <label class="form-check-label" for="inlineCheckbox1">Actor</label>-->
+<!--        </div>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">-->
+<!--            <label class="form-check-label" for="inlineCheckbox2">Cinematographer</label>-->
+<!--        </div>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">-->
+<!--            <label class="form-check-label" for="inlineCheckbox3">Editor</label>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">-->
+<!--            <label class="form-check-label" for="inlineCheckbox4">Director</label>-->
+<!--        </div>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">-->
+<!--            <label class="form-check-label" for="inlineCheckbox5">Producer</label>-->
+<!--        </div>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">-->
+<!--            <label class="form-check-label" for="inlineCheckbox6">Screenwriter</label>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <label><b>Information: </b></label>-->
+<!--        <form action="project_success.html" method="post">-->
+
+<!--            <table>-->
+<!--                <tr>-->
+<!--                    <th><label for="creator_name">Creator Name:</label></th>-->
+<!--                    <td><input id="creator_name" type="text" name="creator_name" value=""></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <th><label for="creator_email">Creator Email:</label></th>-->
+<!--                    <td><input id="creator_email" type="text" name="creator_email" value=""></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <th><label for="shooting_date">Shooting Start Date:</label></th>-->
+<!--                    <td><input id="shooting_date" type="date" name="shooting_date" value=""></td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </form>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">-->
+<!--            <label class="form-check-label" for="inlineCheckbox7">Paid</label>-->
+<!--        </div>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">-->
+<!--            <label class="form-check-label" for="inlineCheckbox8">Unpaid</label>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <label for="synopsis">Synopsis:</label><br>-->
+<!--        <textarea id="synopsis" name="synopsis" rows="10" cols="180"></textarea><br>-->
+<!--        <label for="Role_des">Role Descriptions:</label><br>-->
+<!--        <textarea id="Role_des" name="Role_des" rows="10" cols="180"></textarea><br>-->
+<!--        <div class="mb-3">-->
+<!--            <p id="error_message" style="color: red"></p>-->
 <!--        </div>-->
 
-
-
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Actor</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">Cinematographer</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-            <label class="form-check-label" for="inlineCheckbox3">Editor</label>
-        </div>
-        <br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-            <label class="form-check-label" for="inlineCheckbox4">Director</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-            <label class="form-check-label" for="inlineCheckbox5">Producer</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-            <label class="form-check-label" for="inlineCheckbox6">Screenwriter</label>
-        </div>
-        <br>
-        <label><b>Information: </b></label>
-        <form action="project_success.html" method="post">
-
-            <table>
-                <tr>
-                    <th><label for="creator_name">Creator Name:</label></th>
-                    <td><input id="creator_name" type="text" name="creator_name" value=""></td>
-                </tr>
-                <tr>
-                    <th><label for="creator_email">Creator Email:</label></th>
-                    <td><input id="creator_email" type="text" name="creator_email" value=""></td>
-                </tr>
-                <tr>
-                    <th><label for="shooting_date">Shooting Start Date:</label></th>
-                    <td><input id="shooting_date" type="date" name="shooting_date" value=""></td>
-                </tr>
-            </table>
-        </form>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-            <label class="form-check-label" for="inlineCheckbox7">Paid</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
-            <label class="form-check-label" for="inlineCheckbox8">Unpaid</label>
-        </div>
-        <br>
-        <label for="synopsis">Synopsis:</label><br>
-        <textarea id="synopsis" name="synopsis" rows="10" cols="180"></textarea><br>
-        <label for="Role_des">Role Descriptions:</label><br>
-        <textarea id="Role_des" name="Role_des" rows="10" cols="180"></textarea><br>
-        <div class="mb-3">
-            <p id="error_message" style="color: red"></p>
-        </div>
-
-        <br>
-        <input type="submit" value="Submit">
-
-    </div>
+<!--        <div class="mb-3">-->
+<!--            <button type="submit" class="btn btn-primary" style="width: 20%">Submit Project</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 </section>
 </body>
 </html>
