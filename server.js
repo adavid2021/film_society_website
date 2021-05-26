@@ -1,6 +1,3 @@
-//npm init
-// npm i express body-parser mongoose
-
 const mongoose = require('mongoose');
 const express = require("express");
 const bodyParser = require('body-parser');

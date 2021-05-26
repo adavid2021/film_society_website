@@ -1,47 +1,4 @@
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
-// const error_message = urlParams.get("error_message");
-// const project_id = urlParams.get("p_id");
-// const input = JSON.parse(urlParams.get("input")); // converting back into json
-
-
-// if (project_id) {
-//     $('#project_id').val(project_id);
-// }
-
-// if (error_message) {
-//
-//     if (error_message.includes('name')) {
-//         $('#name').addClass('is-invalid text-danger');
-//     }
-//     if (error_message.includes('creator_name')) {
-//         $('#creator_name').addClass('is-invalid text-danger');
-//     }
-//     if (error_message.includes('creator_email')) {
-//         $('#creator_email').addClass('is-invalid text-danger');
-//     }
-//     if (error_message.includes('shooting_date')) {
-//         $('#shooting_date').addClass('is-invalid text-danger');
-//     }
-//
-//     if (error_message.includes('synopsis')) {
-//         $('#synopsis').addClass('is-invalid text-danger');
-//     }
-//     if (error_message.includes('Role_des')) {
-//         $('#Role_des').addClass('is-invalid text-danger');
-//     }
-//
-//     let errList = error_message.substring(22,).split(',');
-//     let output = ""
-//
-//     for (const err of errList) {
-//         output += err.split(':')[1].substring(1,) + ", ";
-//     }
-//
-//     $('#error_message').text(output.substring(0, output.length - 2));
-// }
-
-$('form').on('submit', function () {
+$('form').on('submit', function (event) {
     let errorMessage = null
 
     $.each($('input,textarea'), function () {
@@ -63,6 +20,8 @@ $('form').on('submit', function () {
 
         return false;
     }
+
+    // add checkbox role checking error here using added html class "ch"
 
     if (!$('#creator_name,textarea').val()) {
         errorMessage = "Creator Name cannot be empty."
@@ -122,19 +81,152 @@ $('form').on('submit', function () {
         return false;
     }
 
-    if (!$('#Role_des,textarea').val()) {
+    if (!$('textarea#role_des').val()) {
         errorMessage = "Please provide some role descriptions of your project."
-        $('#Role_des').addClass('is-invalid text-danger');
+        $('#role_des').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
 
         return false;
     }
 
-    if ($('#Role_des,textarea').val().length < 3) {
+    if ($('textarea#role_des').val().length < 3) {
         errorMessage = "The role description must be at least 3 characters long."
-        $('#Role_des').addClass('is-invalid text-danger');
+        $('#role_des').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
 
         return false;
+    }
+
+    if ($('#actor_ch').prop('checked') && !((checkForRoles("Actor")[0]))) {
+        errorMessage = checkForRoles("Actor")[1];
+        $('#role_des').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false
+    }
+
+    if ($('#cinematographer_ch').prop('checked') && !((checkForRoles("Cinematographer")[0]))) {
+        errorMessage = checkForRoles("Cinematographer")[1];
+        $('#role_des').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false
+    }
+
+    if ($('#editor_ch').prop('checked') && !((checkForRoles("Editor")[0]))) {
+        errorMessage = checkForRoles("Editor")[1];
+        $('#role_des').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false
+    }
+
+    if ($('#director_ch').prop('checked') && !((checkForRoles("Director")[0]))) {
+        errorMessage = checkForRoles("Director")[1];
+        $('#role_des').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false
+    }
+
+    if ($('#producer_ch').prop('checked') && !((checkForRoles("Producer")[0]))) {
+        errorMessage = checkForRoles("Producer")[1];
+        $('#role_des').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false
+    }
+
+    if ($('#screenwriter_ch').prop('checked') && !((checkForRoles("Screenwriter")[0]))) {
+        errorMessage = checkForRoles("Screenwriter")[1];
+        $('#role_des').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false
     }
 });
+
+// takes in a single checkbox words, based on input determine which words to look for in the role description
+// throw an error if the specified key word is not present
+function checkForRoles(role) {
+    const text = $('textarea#role_des').val();
+
+    // console.log("text: ", text);
+    let isCorrect = false;
+    let msg = "";
+    // console.log("role ", role)
+
+    const actor_kw = ["actor", "Actor", "actress", "Actress"];
+    const cin_kw =
+        ["cinematographer", "Cinematographer", "Cameraman",
+            "cameraman", "camera man", "Camera man",
+            "videographer", "Videographer"];
+    const editor_kw = ["editor", "Editor"];
+    const director_kw = ["director", "Director"];
+    const producer_kw = ["producer", "Producer"];
+    const scrn_kw = ["writer", "Writer"];
+
+    switch (role) {
+        // check the role description text area text for word specified in switch case keywords
+        case "Actor":
+            actor_kw.forEach(keyword => {
+                if (text.includes(keyword)) {
+                    isCorrect = true;
+                }
+            });
+            msg = "Role description must include a description for all of the roles checked in the roles section" +
+                " (you must include one of the following words " + spaced(actor_kw) + ").";
+            break;
+        case "Cinematographer":
+            cin_kw.forEach(keyword => {
+                if (text.includes(keyword)) {
+                    isCorrect = true;
+                }
+            });
+            msg = "Role description must include a description for all of the roles checked in the roles section" +
+                "(you must include one of the following words " + spaced(cin_kw) + ").";
+            break;
+        case "Editor":
+            editor_kw.forEach(keyword => {
+                if (text.includes(keyword)) {
+                    isCorrect = true;
+                }
+            });
+            msg = "Role description must include a description for all of the roles checked in the roles section" +
+                "( you must include one of the following words: " + spaced(editor_kw) + ").";
+            break;
+        case "Director":
+            director_kw.forEach(keyword => {
+                if (text.includes(keyword)) {
+                    isCorrect = true;
+                }
+            });
+            msg = "Role description must include a description for all of the roles checked in the roles section" +
+                "(you must include one of the following words " + spaced(director_kw) + ").";
+            break;
+        case "Producer":
+            producer_kw.forEach(keyword => {
+                if (text.includes(keyword)) {
+                    isCorrect = true;
+                }
+            });
+            msg = "Role description must include a description for all of the roles checked in the roles section" +
+                "(you must include one of the following words " + spaced(producer_kw) + ").";
+            break;
+        case "Screenwriter":
+            scrn_kw.forEach(keyword => {
+                if (text.includes(keyword)) {
+                    isCorrect = true;
+                }
+            });
+            msg = "Role description must include a description for all of the roles checked in the roles section" +
+                "(you must include one of the following words " + spaced(scrn_kw) + ").";
+            break;
+    }
+    return [isCorrect, msg];
+}
+
+// spaces out string array into correct grammar
+function spaced(text_array) {
+    return text_array.join(", ");
+}
