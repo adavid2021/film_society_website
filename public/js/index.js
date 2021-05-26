@@ -41,7 +41,7 @@ function showList(projects) {
         let button_html = ``;
         const list = projects[idx].role_list.split(" ");
         list.forEach(role=>{
-            button_html+=`<button class="btn btn-outline-dark" style="background-color: white; color: green; border-color: darkseagreen; border-width: 2px">${role}</button>`
+            button_html+=`<button class="btn btn-outline-dark" style="background-color: white; color: var(--burnt-sienna); border-color: darkseagreen; border-width: 2px">${role}</button>`
         });
         return button_html
     })

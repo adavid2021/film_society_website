@@ -1,13 +1,13 @@
+
 .even_row {
-    background-color: darkolivegreen;
-    color: aliceblue;
+    background-color: var(--cadet);
+    color: var(--platinum);
 }
 
 .odd_row {
-    background-color: darkgreen;
-    color: aliceblue;
+    background-color: var(--columbia-blue);
+    color: var(--platinum);
 }
-
 .apply_button {
     width: 100%;
 }

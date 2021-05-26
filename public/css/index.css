@@ -1,11 +1,20 @@
+:root{
+
+    --burnt-sienna: #dd6e42ff;
+    --dutch-white: #e8dab2ff;
+    --cadet: #4f6d7aff;
+    --columbia-blue: #c0d6dfff;
+    --platinum: #eaeaeaff;
+}
+
 .even_row {
-    background-color: darkolivegreen;
-    color: aliceblue;
+    background-color: var(--cadet);
+    color: var(--platinum);
 }
 
 .odd_row {
-    background-color: darkgreen;
-    color: aliceblue;
+    background-color: var(--columbia-blue);
+    color: var(--platinum);
 }
 
 .synopsis {
@@ -18,12 +27,13 @@
 }
 
 #footer {
-    background-color: limegreen;
+    background-color: var(--burnt-sienna);
 }
 
 #control_buttons .form-check-input{
     width: 20px;
     height: 20px;
+
 }
 
 #control_buttons .form-check-label{
