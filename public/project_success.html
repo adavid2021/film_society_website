@@ -31,22 +31,25 @@
 <body class="container">
 
 
-<section id="header_section">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Film Society</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-dark cardstrading" style="background-color: var(--burnt-sienna);">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img src="img/1200px-Clark_University_seal.svg.png"alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 25%">
+            <div class="navbar-nav"><a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="#">Home</a>
+                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" aria-current="page" href="/home.html">About Us</a>
+                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/index.html">Current Projects</a>
+                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/project_submission.html">Create a New Project</a>
+
+
             </div>
         </div>
-    </nav>
-</section>
+    </div>
+</nav>
+
 
 <!--<section id="error_section">-->
 <!--    <div class="row">-->
@@ -86,6 +89,18 @@
         </div>
     </div>
 </div>
+
+<section id="footer">
+    <p>
+        <script defer>
+            function getYear(){
+                return (new Date().getFullYear())
+            }
+            $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
+        </script>
+    </p>
+
+</section>
 
 
 

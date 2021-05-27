@@ -33,3 +33,11 @@
 }
 
 
+#footer{
+    height: 80px;
+    background-color: var(--burnt-sienna);
+    color: var(--platinum);
+    text-align: center;
+    padding-top: 10px;
+    font-family: sans-serif;
+}

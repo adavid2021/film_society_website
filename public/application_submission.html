@@ -31,75 +31,143 @@
 <body class="container" style="background-color: var(--columbia-blue)">
 
 
-<section id="header_section">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Film Society</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> &nbsp &nbsp Home</a>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-dark cardstrading" style="background-color: var(--burnt-sienna);">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img
+                src="img/1200px-Clark_University_seal.svg.png" alt="" width="50" height="50"
+                class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 25%">
+            <div class="navbar-nav"><a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;"
+                                       href="#">Home</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" aria-current="page"
+                   href="/home.html">About Us</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" href="/index.html">Current
+                    Projects</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" href="/project_submission.html">Create
+                    a New Project</a>
+
+
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <section style="margin-top: 2%">
-        <form action="/new-applicant" method="post">
+<section id="infoBox">
+    <div class="row justify-content-center mt-3">
+        <div class="card text-white mt-4 mb-3" style="max-width: 40%; text-align: center; background-color: var(--dodger-blue)">
+            <h3>Application submission page</h3>
+        </div>
 
-            <div class="mb-3">
-                <label for="applicant_name" class="form-label">Name</label>
-                <input type="text" class="form-control text" style="width: 200px;" id="applicant_name"
-                       placeholder="First and Last name" name="applicant_name">
+    </div>
+
+    </div>
+</section>
+
+<section style="margin-top: 2%">
+    <div class="row justify-content-start">
+        <div class="card text-white mt-3 mb-3" style="max-width: 60%; background-color: var(--cadet)">
+            <div class="card-body mt-3">
+                <form action="/new-applicant" method="post">
+
+                    <!--                    <div class="mb-3">-->
+                    <!--                        <label for="applicant_name" class="form-label">Name</label>-->
+                    <!--                        <input type="text" class="form-control text" style="width: 200px;" id="applicant_name"-->
+                    <!--                               placeholder="First and Last name" name="applicant_name">-->
+                    <!--                    </div>-->
+                    <div class="row">
+                        <div class="col-2"><label for="applicant_name" class="form-label"><b> Name</b></label>
+                        </div>
+                        <div class="col-2"><input type="text" class="form-control text" style="width: 200px;"
+                                                  id="applicant_name"
+                                                  placeholder="First and Last Name" name="applicant_name"></div>
+                    </div>
+
+                    <!--                    <div class="mb-3">-->
+                    <!--                        <label for="applicant_email" class="form-label">Email</label>-->
+                    <!--                        <input type="text" class="form-control text" style="width: 200px;" id="applicant_email"-->
+                    <!--                               placeholder="name@place.domain" name="applicant_email">-->
+                    <!--                    </div>-->
+                    <div class="row mb-3 mt-3">
+                        <div class="col-2"><label for="applicant_email" class="form-label"><b> Email</b></label>
+                        </div>
+                        <div class="col-2"><input type="text" class="form-control text" style="width: 200px;"
+                                                  id="applicant_email"
+                                                  placeholder="ame@place.domain" name="applicant_email"></div>
+                    </div>
+
+                    <!--                    <div class="row mb-3 mt-3">-->
+                    <!--                        <div class="col-2"><label for="applicant_qualifications" class="form-label">Qualifications</label></div>-->
+                    <!--                        <div class="col-2"><input type="text" class="form-control text" style="width: 200px;" id="applicant_qualifications"-->
+                    <!--                                                  placeholder="Provide your qualifications here" name="applicant_qualifications"></div>-->
+                    <!--                    </div>-->
+
+
+                    <div class="row mb-3 mt-3">
+                        <div class="col-2"><label for="applicant_qualifications"><b>Qualifications</b></label></div>
+                        <div class="col-2"><textarea class="form-control" style="width: 500px;margin-left: 3px"
+                                                     id="applicant_qualifications" name="applicant_qualifications"
+                                                     placeholder="Provide your qualifications here"></textarea><br>
+                        </div>
+                    </div>
+
+
+                    <!--                    <div class="mb-3">-->
+                    <!--                        <label for="preferred_roles" class="form-label">Preferred Roles</label>-->
+                    <!--                        <input class="form-control text" placeholder="write your preferred roles (separated by spaces)"-->
+                    <!--                               type="text" name="preferred_roles" id="preferred_roles">-->
+                    <!--                    </div>-->
+
+
+                    <div class="row mb-3 mt-3">
+                        <div class="col-2"><label for="preferred_roles"><b>Preferred Roles:</b></label></div>
+                        <div class="col-2"><input class="form-control text" style="width: 500px" placeholder="write your preferred roles (separated by spaces)"
+                                                  type="text" name="preferred_roles" id="preferred_roles"></div>
+                    </div>
+
+                    <div class="mb-5">
+
+                        <input type="checkbox" id="checkBox">
+                        <label for="checkBox" class="form-label">The information I have provided is accurate to the
+                            extend of my knowledge.</label>
+                    </div>
+                    <div class="mb-3">
+                        <p id="error_message" style="color: red"></p>
+                    </div>
+
+                    <input type="hidden" name="project_id" id="project_id">
+
+                    <!--            <div class="mb-3">-->
+                    <!--                <button type="submit" class="btn btn-light" style="width: 20%; background-color: var(&#45;&#45;burnt-sienna); color: white" >Submit Application</button>-->
+                    <!--            </div>-->
+                    <div class="mb-3" style="margin-left: 40%">
+                        <button type="submit" class="btn btn-light"
+                                style="width: 50%; background-color: var(--burnt-sienna); color: white" ;>Submit
+                            Application
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="applicant_email" class="form-label">Email</label>
-                <input type="text" class="form-control text" style="width: 200px;" id="applicant_email"
-                       placeholder="name@place.domain" name="applicant_email">
-            </div>
-            <div class="mb-3">
-                <label for="applicant_qualifications" class="form-label">Qualifications</label>
-                <input type="text" class="form-control text" id="applicant_qualifications"
-                       placeholder="Provide your qualifications here" name="applicant_qualifications">
-            </div>
-            <div class="mb-3">
-                <label for="preferred_roles" class="form-label">Preferred Roles</label>
-                <input class="form-control text" placeholder="write your preferred roles (separated by spaces)"
-                       type="text" name="preferred_roles" id="preferred_roles">
-            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="mb-3">
+<section id="footer" style="margin-top:3%">
+    <p>
+        <script defer>
+            function getYear() {
+                return (new Date().getFullYear())
+            }
 
-                <input type="checkbox" id="checkBox">
-                <label for="checkBox" class="form-label">The information I have provided is accurate to the extend of my knowledge.</label>
-            </div>
-            <div class="mb-3">
-                <p id="error_message" style="color: red"></p>
-            </div>
-
-            <input type="hidden" name="project_id" id="project_id">
-
-            <div class="mb-3">
-                <button type="submit" class="btn btn-light" style="width: 20%; background-color: var(--burnt-sienna); color: white" >Submit Application</button>
-            </div>
-        </form>
-    </section>
-
-    <section id="footer" style="color: white">
-        <p>
-            <script>
-                function getYear() {
-                    return (new Date().getFullYear())
-                }
-
-                $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
-            </script>
-        </p>
-    </section>
+            $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
+        </script>
+    </p>
 
 </section>
+
+
 </body>
 </html>

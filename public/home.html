@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/home.css">
+
+    <!--    Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+
+    <!--    Google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=RocknRoll+One&display=swap"
+          rel="stylesheet">
+
+    <!--    fontawesome-->
+    <script src="https://kit.fontawesome.com/e5b5eed843.js" crossorigin="anonymous"></script>
+
+    <!--    Google jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="js/index.js" defer></script>
+</head>
+<body class="container">
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark cardstrading" style="background-color: var(--burnt-sienna);">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color: var(--platinum);" href="#"><img src="img/1200px-Clark_University_seal.svg.png"alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 20%">
+            <div class="navbar-nav"><a class="nav-link" style= "color:var(--platinum);" href="#">Home</a>
+                <a class="nav-link" style= "color:var(--platinum);" aria-current="page" href="/home.html">About Us</a>
+                <a class="nav-link" style= "color:var(--platinum);" href="/index.html">Current Projects</a>
+                <a class="nav-link" style= "color:var(--platinum);" href="/project_submission.html">Create a New Project</a>
+
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<section id="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="img/screenstudiesimage1.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="img/screenstudiesimage2.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="img/screenstudiesimage3.jpeg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section id="aboutUs" style="text-align: center; padding-top: 5%">
+<div>
+    <h1 style="padding-bottom: 2%">Learn More About Us</h1>
+    <p>Clark University Screen Studies department is lacking in being able to help students do independent film projects. We are forming a Clark University Film Society that will help independent filmmakers bring their ideas to life. As there is no proper and easy way for Screen Studies students to find actors and crew members for their films, this new club will need a platform that will allow these filmmakers to easily find and recruit people for specific roles in their films.
+    </p>
+</div>
+</section>
+
+<section id="footer">
+    <p>
+        <script defer>
+            function getYear(){
+                return (new Date().getFullYear())
+            }
+            $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
+        </script>
+    </p>
+
+</section>
+
+
+
+</body>
+</html>

@@ -1,5 +1,4 @@
 :root{
-
     --burnt-sienna: #dd6e42ff;
     --dutch-white: #e8dab2ff;
     --cadet: #4f6d7aff;
@@ -16,27 +15,21 @@
     --dodger-blue: #4895efff;
     --vivid-sky-blue: #4cc9f0ff;
 }
-.even_row {
-    background-color: var(--cadet);
-    color: var(--platinum);
+#carousel{
+    padding-top: 5%;
+}
+#aboutUs p{
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding-bottom: 5%;
 }
 
-.odd_row {
-    background-color: var(--columbia-blue);
-    color: var(--platinum);
-}
-.apply_button {
-    width: 100%;
-}
-
-.pad {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-#error_section{
-    width: 100px;
-    length:100px
+#carousel img{
+    height: 500px;
+    max-width: 70%;
+    align-content: center;
+    margin-right: 30%;
+    margin-left: 15%;
 }
 #footer{
     height: 80px;
