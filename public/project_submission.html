@@ -54,64 +54,73 @@
     <section style="margin-top: 2%">
         <form action="/new-project" method="post" id="applicant_submission">
 
-            <div class="mb-3">
-                <label for="name" class="form-label"><b>Project Name:</b></label>
-                <input type="text" class="form-control text" style="width: 200px;" id="name"
-                       placeholder="Project Name" name="name">
+<!--            <div class="form-check form-check-inline">-->
+<!--                <label for="name" class="form-label"><b>Project Name:</b></label>-->
+<!--                <input type="text" class="form-control text" style="width: 200px;" id="name"-->
+<!--                       placeholder="Project Name" name="name">-->
+<!--            </div>-->
+
+            <div class="row">
+                <div class="col-2" ><label for="name" class="form-label"><b>Project Name:</b></label>
+                </div>
+                <div class="col-2" ><input type="text" class="form-control text" style="width: 200px;" id="name"
+                       placeholder="Project Name" name="name"> </div>
             </div>
-            <div>
+
+            <div class="row mt-3 mb-3">
 
 
                 <!--            Checkboxes for Roles-->
-                <label><b>Roles: </b></label>
-
-                <div class="form-check form-check-inline">
+                <div class="col" > <label><b>Roles: </b></label> </div>
+<!--                <div class="col-2" >-->
+                <div class="col form-check form-check-inline">
                     <input class="form-check-input ch" type="checkbox" id="actor_ch">
                     <label class="form-check-label" for="actor_ch">Actor</label>
                 </div>
 
-                <div class="form-check form-check-inline">
+                <div class="col form-check form-check-inline">
                     <input class="form-check-input ch" type="checkbox" id="cinematographer_ch">
                     <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>
                 </div>
 
-                <div class="form-check form-check-inline">
+                <div class="col form-check form-check-inline">
                     <input class="form-check-input ch" type="checkbox" id="editor_ch">
                     <label class="form-check-label" for="editor_ch">Editor</label>
                 </div>
 
-                <div class="form-check form-check-inline">
+                <div class="col form-check form-check-inline">
                     <input class="form-check-input ch" type="checkbox" id="director_ch">
                     <label class="form-check-label" for="director_ch">Director</label>
                 </div>
 
-                <div class="form-check form-check-inline">
+                <div class="col form-check form-check-inline">
                     <input class="form-check-input ch" type="checkbox" id="producer_ch">
                     <label class="form-check-label" for="producer_ch">Producer</label>
                 </div>
 
-                <div class="form-check form-check-inline">
+                <div class="col form-check form-check-inline">
                     <input class="form-check-input ch" type="checkbox" id="screenwriter_ch">
                     <label class="form-check-label" for="screenwriter_ch">Screenwriter</label>
+<!--                </div>-->
                 </div>
             </div>
 
-            <div class="mb-4 mt-3">
-                <label for="creator_name" class="form-label"><b>Creator Name:</b></label>
-                <input type="text" class="form-control text" style="width: 200px;" id="creator_name"
-                       placeholder="Creator Name" name="creator_name">
+            <div class="row mb-4 mt-3">
+                <div class="col-2" ><label for="creator_name" class="form-label"><b>Creator Name:</b></label></div>
+                <div class="col-2" ><input type="text" class="form-control text" style="width: 200px;" id="creator_name"
+                                           placeholder="Creator Name" name="creator_name"></div>
             </div>
 
-            <div class="mb-3">
-                <label for="creator_email" class="form-label"><b>Creator Email:</b></label>
-                <input type="text" class="form-control text" id="creator_email"
-                       placeholder="name@place.domain" name="creator_email">
+            <div class="row mb-3">
+                <div class="col-2" ><label for="creator_email" class="form-label"><b>Creator Email:</b></label></div>
+                <div class="col-2" ><input type="text" class="form-control text" id="creator_email"
+                                           placeholder="name@place.domain" name="creator_email"></div>
             </div>
 
             <!--            shooting date -->
-            <div class="mb-3">
-                <label for="shooting_date"><b>Shooting Start Date:</b></label>
-                <input id="shooting_date" type="date" name="shooting_date" value="">
+            <div class="row mb-3">
+                <div class="col-2" ><label for="shooting_date"><b>Shooting Start Date:</b></label></div>
+                <div class="col-2" ><input id="shooting_date" type="date" name="shooting_date" value="" style="padding-right: 10%"></div>
             </div>
 
             <!--            paid and Unpaid-->
@@ -125,17 +134,17 @@
             </div>
 
             <!--            for synopsis and Role Descriptions-->
-            <div class="mb-3">
+            <div class="mb-3 mt-3">
                 <label for="synopsis"><b>Synopsis:</b></label><br>
-                <textarea class="form-control" id="synopsis" name="synopsis" rows="6" cols="180"></textarea><br>
+                <textarea class="form-control" id="synopsis" name="synopsis" rows="4" cols="180" placeholder="Provide some information about your project."></textarea><br>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 mt-3">
                 <label for="role_des"><b>Role Descriptions:</b></label><br>
-                <textarea class="form-control" id="role_des" name="role_des" rows="6" cols="180"></textarea><br>
+                <textarea class="form-control" id="role_des" name="role_des" rows="4" cols="180" placeholder="Provide the role descriptions that are required for this project."></textarea><br>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 mt-3">
                 <p id="error_message" style="color: red"></p>
             </div>
 

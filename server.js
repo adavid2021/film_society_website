@@ -53,11 +53,23 @@ app.get('/project_detail', function (req, res) {
 app.get('/application_submission', function (req, res) {
     res.sendFile(__dirname + "/public/application_submission.html");
 });
+
+app.get('/project_submission', function (req, res) {
+    res.sendFile(__dirname + "/public/project_submission.html");
+});
+
+
 app.get('/app_success', function (req, res) {
     res.sendFile(__dirname + "/public/app_success.html");
 });
 app.get('/app_failure', function (req, res) {
     res.sendFile(__dirname + "/public/app_failure.html");
+});
+app.get('/project_success', function (req, res) {
+    res.sendFile(__dirname + "/public/project_success.html");
+});
+app.get('/project_failure', function (req, res) {
+    res.sendFile(__dirname + "/public/project_failure.html");
 });
 
 app.get("/get_all_projects", function (req, res) {
@@ -176,3 +188,61 @@ app.post("/new-applicant", function (req, res) {
     });
 });
 
+
+// app.post("/new-project",function(req,res){
+//     let current_project = {};
+//
+//     Project.find({"_id": req.body.project_id}, function (err, data) {
+//         current_project = data[0]
+//
+//         let project_name_list = [];
+//         let project_list = [];
+//
+//         // each applicant in the foreach loop is an applicant object
+//         current_project.forEach(project => {
+//             project_list.push(project);
+//             if (!project_name_list.includes(project.title)) {
+//                 project_name_list.push(project.title());
+//             }
+//         });
+//
+//         if (project_name_list.includes(req.body.project.title())) {
+//             res.redirect("/project_failure?p_id=" + req.body.project_id);
+//         } else {
+//             // unique applicant name
+//             const new_project = {
+//                 "title": req.body.title,
+//                 "role_list": req.body.role_list,
+//                 "information": req.body.information,
+//                 "role_descriptions":req.body.role_descriptions
+//             }
+//
+//             // let roles_list = [];
+//             // req.body.preferred_roles.split(" ").forEach(role => {
+//             //     roles_list.push({role: role});
+//             // });
+//             //
+//             // // setting preferred roles to applicant object
+//             // new_applicant["preferred_roles"] = roles_list;
+//
+//             // adding new applicant object to applicant list
+//             project_list.push(new_project);
+//
+//             Project.updateOne(
+//                 {_id: req.body.project_id},
+//                 {$set: {applicants: project_list}},
+//                 {runValidators: true},
+//                 (err, info) => {
+//                     if (err) {
+//                         console.log(err.message);
+//                         console.log(JSON.stringify(err.errors));
+//                         res.redirect(`/edit.html?error_message=${JSON.stringify(err.errors)}&input=${JSON.stringify(new_project)}&p_id=${req.body._id}`);
+//                     } else {
+//                         console.log(info);
+//                         // res.redirect(`/detail.html?car_id=${req.body._id}`);
+//                         res.redirect("/project_success");
+//                     }
+//                 });
+//         }
+//     });
+// })

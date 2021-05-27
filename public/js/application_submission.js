@@ -83,6 +83,14 @@ $('form').on('submit', function () {
         return false;
     }
 
+    if ($('#applicant_name,textarea').val().length < 3) {
+        errorMessage = "The name filed must be at least 3 characters long."
+        $('#applicant_name').addClass('is-invalid text-danger');
+        $('#error_message').text(errorMessage);
+
+        return false;
+    }
+
     if ($('#applicant_qualifications,textarea').val().length < 3) {
         errorMessage = "The qualifications filed must be at least 3 characters long."
         $('#applicant_qualifications').addClass('is-invalid text-danger');
