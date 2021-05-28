@@ -40,13 +40,13 @@
     background-color: var(--burnt-sienna);
 }
 
-#control_buttons .form-check-input{
+#filters .form-check-input{
     width: 20px;
     height: 20px;
 
 }
 
-#control_buttons .form-check-label{
+#filters .form-check-label{
 
 }
 

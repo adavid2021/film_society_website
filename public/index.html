@@ -50,54 +50,56 @@
 </nav>
 
 
+<!--max-width: 60%;-->
 
-
-<section id="control_buttons">
+<section id="filters">
     <div class="input-group mt-4 mb-3 d-flex justify-content-end">
         <a href="/project_submission.html" class="btn rounded" style="background-color: var(--burnt-sienna); color: white">Create a New Project</a>
     </div>
 
     <div class="row justify-content-center">
-        <div class="card text-white mt-3 mb-3" style="max-width: 60%; background-color: var(--cadet)">
-            <div class="card-body" >
-                <h5 class="card-title">Filter Projects By Available Roles</h5>
-                <p class="card-text">Select the roles that you are interested in</p>
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <div class="card text-white mt-3 mb-3" style="background-color: #354950FF">
+                <div class="card-body" >
+                    <h5 class="card-title">Filter Projects By Available Roles</h5>
+                    <p class="card-text">Select the roles that you are interested in</p>
 
-                <div class="row justify-content-between py-3">
-                    <div class="col-2">
-                        <div class="form-check">
-                            <input class="form-check-input pl-2" type="checkbox" id="actor_checkbox" value="actor">
-                            <label class="form-check-label pr-2" for="actor_checkbox">Actor</label>
+                    <div class="row justify-content-between py-3">
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input pl-2" type="checkbox" id="actor_checkbox" value="actor">
+                                <label class="form-check-label pr-2" for="actor_checkbox">Actor</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input pl-2" type="checkbox" id="director_checkbox" value="director">
+                                <label class="form-check-label pr-2" for="director_checkbox">Director</label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input pl-2" type="checkbox" id="director_checkbox" value="director">
-                            <label class="form-check-label pr-2" for="director_checkbox">Director</label>
+                        <div class="col-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox" value="cinematographer">
+                                <label class="form-check-label pr-2" for="cinematographer_checkbox">Cinematographer</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox" value="producer">
+                                <label class="form-check-label pr-2" for="producer_checkbox">Producer</label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox" value="editor">
+                                <label class="form-check-label pr-2" for="editor_checkbox">Editor</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox" value="screenwriter">
+                                <label class="form-check-label pr-2" for="screenwriter_checkbox">Screenwriter</label>
+                            </div>
                         </div>
                     </div>
                     <div class="col-2">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox" value="cinematographer">
-                            <label class="form-check-label pr-2" for="cinematographer_checkbox">Cinematographer</label>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-light" style="background-color: var(--burnt-sienna); color: white" onclick="searchProjects()">Search</button>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox" value="producer">
-                            <label class="form-check-label pr-2" for="producer_checkbox">Producer</label>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox" value="editor">
-                            <label class="form-check-label pr-2" for="editor_checkbox">Editor</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox" value="screenwriter">
-                            <label class="form-check-label pr-2" for="screenwriter_checkbox">Screenwriter</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="input-group mb-3">
-                        <button class="btn btn-light" style="background-color: var(--burnt-sienna); color: white" onclick="searchProjects()">Search</button>
                     </div>
                 </div>
             </div>
@@ -107,7 +109,7 @@
 
 <section id="project_section">
     <div class="row justify-content-center" >
-        <div class="col-10">
+        <div class="col-lg-10 col-md-11 col-sm-12">
             <ul id="project_list" class="list-group">
 
             </ul>

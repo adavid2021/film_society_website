@@ -38,7 +38,7 @@ function showList(projects) {
 
     // note that when passing projects to the detail page we use the title as the parameter and replace spaces with "~"
     $('.mybuttons').append(function (idx) {
-        let button_html = ``;
+        let button_html = `<p><b>Available Roles: &nbsp &nbsp</b></p>`;
         const list = projects[idx].role_list.split(" ");
         list.forEach(role => {
             if (role) {
@@ -48,21 +48,11 @@ function showList(projects) {
         return button_html
     })
         .after(function (idx) {
-            return `<a href="/project_detail?project_id=${projects[idx]._id}" class="btn btn-outline-light interestbutton" style="background-color: var(--burnt-sienna)">I am interested!</a>`
-        })
-        .after(function (idx) {
-            return `<p class="more_info"><b>Creator email:</b> ${projects[idx].information[0].creator_email}</p>`
-        })
-        .after(function (idx) {
-            return `<p class="more_info"><b>Creator name:</b> ${projects[idx].information[0].creator_name}</p>`
-        })
-        .after(function (idx) {
-            return `<p class="more_info">this project is <b>${projects[idx].information[0].paid}</b></p>`
+            return `<a href="/project_detail?project_id=${projects[idx]._id}" class="btn btn-outline-light interestbutton mt-4" style="background-color: var(--burnt-sienna)">I am interested!</a>`
         })
         .after(function (idx) {
             return `<p class="date"><b>Filming Date:</b> ${projects[idx].information[0].film_date}</p>`
         })
-
         .after(function (idx) {
             return `<p class="synopsis"><b>Synopsis:</b> ${projects[idx].information[0].synopsis}</p>`
         });
