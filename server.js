@@ -58,16 +58,18 @@ app.get('/project_submission', function (req, res) {
     res.sendFile(__dirname + "/public/project_submission.html");
 });
 
-
 app.get('/app_success', function (req, res) {
     res.sendFile(__dirname + "/public/app_success.html");
 });
+
 app.get('/app_failure', function (req, res) {
     res.sendFile(__dirname + "/public/app_failure.html");
 });
+
 app.get('/project_success', function (req, res) {
     res.sendFile(__dirname + "/public/project_success.html");
 });
+
 app.get('/project_failure', function (req, res) {
     res.sendFile(__dirname + "/public/project_failure.html");
 });
@@ -89,25 +91,23 @@ app.get("/get_all_projects", function (req, res) {
     });
 });
 
-app.get('/get_project_by_id',
-    function (req, res) {
-        console.log(req.query.project_id);
-        Project.find({"_id": req.query.project_id}, function (err, data) {
-            if (err || data.length === 0) {
-                // sending json file for client to be able to read
-                res.send({
-                    "message": "internal database error",
-                    "data": {}
-                });
-            } else {
-                res.send({
-                    "message": "success",
-                    "data": data[0]
-                });
-            }
-        });
+app.get('/get_project_by_id', function (req, res) {
+    console.log(req.query.project_id);
+    Project.find({"_id": req.query.project_id}, function (err, data) {
+        if (err || data.length === 0) {
+            // sending json file for client to be able to read
+            res.send({
+                "message": "internal database error",
+                "data": {}
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data[0]
+            });
+        }
     });
-
+});
 
 // - post uses body for params
 // - get uses query for params
@@ -176,8 +176,8 @@ app.post("/new-applicant", function (req, res) {
                 (err, info) => {
                     if (err) {
                         console.log(err.message);
-                        console.log(JSON.stringify(err.errors));
-                        res.redirect(`/edit.html?error_message=${JSON.stringify(err.errors)}&input=${JSON.stringify(new_applicant)}&car_id=${req.body._id}`);
+                        // console.log(JSON.stringify(err.errors));
+                        // res.redirect(`/edit.html?error_message=${JSON.stringify(err.errors)}&input=${JSON.stringify(new_applicant)}&car_id=${req.body._id}`);
                     } else {
                         console.log(info);
                         // res.redirect(`/detail.html?car_id=${req.body._id}`);
@@ -188,61 +188,72 @@ app.post("/new-applicant", function (req, res) {
     });
 });
 
+app.post("/new-project", function (req, res) {
+    let project_names = [];
 
-// app.post("/new-project",function(req,res){
-//     let current_project = {};
-//
-//     Project.find({"_id": req.body.project_id}, function (err, data) {
-//         current_project = data[0]
-//
-//         let project_name_list = [];
-//         let project_list = [];
-//
-//         // each applicant in the foreach loop is an applicant object
-//         current_project.forEach(project => {
-//             project_list.push(project);
-//             if (!project_name_list.includes(project.title)) {
-//                 project_name_list.push(project.title());
-//             }
-//         });
-//
-//         if (project_name_list.includes(req.body.project.title())) {
-//             res.redirect("/project_failure?p_id=" + req.body.project_id);
-//         } else {
-//             // unique applicant name
-//             const new_project = {
-//                 "title": req.body.title,
-//                 "role_list": req.body.role_list,
-//                 "information": req.body.information,
-//                 "role_descriptions":req.body.role_descriptions
-//             }
-//
-//             // let roles_list = [];
-//             // req.body.preferred_roles.split(" ").forEach(role => {
-//             //     roles_list.push({role: role});
-//             // });
-//             //
-//             // // setting preferred roles to applicant object
-//             // new_applicant["preferred_roles"] = roles_list;
-//
-//             // adding new applicant object to applicant list
-//             project_list.push(new_project);
-//
-//             Project.updateOne(
-//                 {_id: req.body.project_id},
-//                 {$set: {applicants: project_list}},
-//                 {runValidators: true},
-//                 (err, info) => {
-//                     if (err) {
-//                         console.log(err.message);
-//                         console.log(JSON.stringify(err.errors));
-//                         res.redirect(`/edit.html?error_message=${JSON.stringify(err.errors)}&input=${JSON.stringify(new_project)}&p_id=${req.body._id}`);
-//                     } else {
-//                         console.log(info);
-//                         // res.redirect(`/detail.html?car_id=${req.body._id}`);
-//                         res.redirect("/project_success");
-//                     }
-//                 });
-//         }
-//     });
-// })
+    Project.find({}, function (err, data) {
+        // sends back a list of all documents in the database
+        console.log("all data ", data);
+        data.forEach(project => {
+            project_names.push(project.title)
+        })
+    });
+
+    console.log(project_names);
+
+    if (project_names.includes(req.body.title)) {
+        res.redirect("/project_failure");
+    } else {
+        // unique applicant name
+        let role_list = "";
+
+        if (req.body.actor) {
+            role_list += "actor "
+        }
+        if (req.body.cin) {
+            role_list += "cinematographer "
+        }
+        if (req.body.director) {
+            role_list += "director "
+        }
+        if (req.body.editor) {
+            role_list += "editor "
+        }
+        if (req.body.producer) {
+            role_list += "producer "
+        }
+        if (req.body.scrn) {
+            role_list += "screenwriter "
+        }
+
+        // creating correctly formatted date from date object
+        let date = req.body.shooting_date.toString();
+        let new_date = date.substring(5, 7) + "-" + date.substring(8, 10) + "-" + date.substring(0, 4);
+
+        const new_project = {
+            "title": req.body.title,
+            "role_list": role_list,
+            "information": [{
+                "film_date": new_date,
+                "paid": req.body.paidRadio,
+                "creator_name": req.body.creator_name,
+                "creator_email": req.body.creator_email,
+                "synopsis": req.body.synopsis
+            }],
+            "role_descriptions": req.body.role_des,
+            "applicants": []
+        }
+
+        const np = new Project(new_project);
+        np.save(function (err, new_project) {
+            if (err) {
+                console.log(err["message"]);
+                // res.redirect("/edit.html?error_message="
+                //     + err["message"] + "&input=" + JSON.stringify(new_project));
+            } else {
+                console.log(new_project._id);
+                res.redirect("/project_success");
+            }
+        })
+    }
+})

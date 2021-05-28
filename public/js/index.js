@@ -40,8 +40,10 @@ function showList(projects) {
     $('.mybuttons').append(function (idx) {
         let button_html = ``;
         const list = projects[idx].role_list.split(" ");
-        list.forEach(role=>{
-            button_html+=`<button class="btn btn-outline-dark" style="background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</button>`
+        list.forEach(role => {
+            if (role) {
+                button_html += `<button class="btn btn-outline-dark" style="background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</button>`
+            }
         });
         return button_html
     })
@@ -63,7 +65,7 @@ function showList(projects) {
 
         .after(function (idx) {
             return `<p class="synopsis"><b>Synopsis:</b> ${projects[idx].information[0].synopsis}</p>`
-    });
+        });
 }
 
 //when entire page has been loaded execute this function
@@ -74,7 +76,8 @@ $(document).ready(function () {
     console.log(filters);
     $.getJSON("/get_all_projects").done(function (data) {
         if (data.message === "success") {
-            if (filters){
+            console.log(data["data"]);
+            if (filters) {
                 data = filterData(data, filters);
                 showList(data.sort((a, b) => (a.title > b.title) ? 1 : -1));
             } else {
@@ -84,27 +87,27 @@ $(document).ready(function () {
     });
 });
 
-function filterData(data, filters){
+function filterData(data, filters) {
     console.log(data["data"]);
     let newData = [];
 
-    data["data"].forEach(d=>{
-        if (filters.includes("actor") && d.role_list.includes("actor")){
+    data["data"].forEach(d => {
+        if (filters.includes("actor") && d.role_list.includes("actor")) {
             newData.push(d)
         }
-        if (filters.includes("cinematographer") && d.role_list.includes("cinematographer")){
+        if (filters.includes("cinematographer") && d.role_list.includes("cinematographer")) {
             newData.push(d)
         }
-        if (filters.includes("director") && d.role_list.includes("director")){
+        if (filters.includes("director") && d.role_list.includes("director")) {
             newData.push(d)
         }
-        if (filters.includes("editor") && d.role_list.includes("editor")){
+        if (filters.includes("editor") && d.role_list.includes("editor")) {
             newData.push(d)
         }
-        if (filters.includes("producer") && d.role_list.includes("producer")){
+        if (filters.includes("producer") && d.role_list.includes("producer")) {
             newData.push(d)
         }
-        if (filters.includes("screenwriter") && d.role_list.includes("screenwriter")){
+        if (filters.includes("screenwriter") && d.role_list.includes("screenwriter")) {
             newData.push(d)
         }
     })
@@ -116,23 +119,23 @@ function searchProjects() {
     // sent to server trying to get information from server based on user input
     let current_filters = "";
 
-    if($("#actor_checkbox").is(':checked')){
-        current_filters+="actor"
+    if ($("#actor_checkbox").is(':checked')) {
+        current_filters += "actor"
     }
-    if($("#cinematographer_checkbox").is(':checked')){
-        current_filters+="cinematographer"
+    if ($("#cinematographer_checkbox").is(':checked')) {
+        current_filters += "cinematographer"
     }
-    if($("#editor_checkbox").is(':checked')){
-        current_filters+="editor"
+    if ($("#editor_checkbox").is(':checked')) {
+        current_filters += "editor"
     }
-    if($("#director_checkbox").is(':checked')){
-        current_filters+="director"
+    if ($("#director_checkbox").is(':checked')) {
+        current_filters += "director"
     }
-    if($("#producer_checkbox").is(':checked')){
-        current_filters+="producer"
+    if ($("#producer_checkbox").is(':checked')) {
+        current_filters += "producer"
     }
-    if($("#screenwriter_checkbox").is(':checked')){
-        current_filters+="screenwriter"
+    if ($("#screenwriter_checkbox").is(':checked')) {
+        current_filters += "screenwriter"
     }
 
     location.href = "index.html?filters=" + current_filters;

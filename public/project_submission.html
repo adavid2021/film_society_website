@@ -33,136 +33,130 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark cardstrading" style="background-color: var(--burnt-sienna);">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img src="img/1200px-Clark_University_seal.svg.png"alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
+        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img
+                src="img/1200px-Clark_University_seal.svg.png" alt="" width="50" height="50"
+                class="d-inline-block align-text-top"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 25%">
-            <div class="navbar-nav"><a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="#">Home</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" aria-current="page" href="/home.html">About Us</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/index.html">Current Projects</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/project_submission.html">Create a New Project</a>
-
-
+            <div class="navbar-nav"><a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;"
+                                       href="#">Home</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" aria-current="page"
+                   href="/home.html">About Us</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" href="/index.html">Current
+                    Projects</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" href="/project_submission.html">Create
+                    a New Project</a>
             </div>
         </div>
     </div>
 </nav>
 
 
-    <!--Changes from Application.html-->
+<!--Changes from Application.html-->
 
 
-    <section style="margin-top: 2%">
-        <form action="/new-project" method="post" id="applicant_submission">
+<section style="margin-top: 2%">
+    <form action="/new-project" method="post" id="applicant_submission">
 
-            <!--            <div class="form-check form-check-inline">-->
-            <!--                <label for="name" class="form-label"><b>Project Name:</b></label>-->
-            <!--                <input type="text" class="form-control text" style="width: 200px;" id="name"-->
-            <!--                       placeholder="Project Name" name="name">-->
-            <!--            </div>-->
+        <div class="row">
+            <div class="col-2"><label for="name" class="form-label"><b>Project Name:</b></label>
+            </div>
+            <div class="col-2"><input type="text" class="form-control text" style="width: 200px;" id="name"
+                                      placeholder="Project Name" name="title"></div>
+        </div>
 
-            <div class="row">
-                <div class="col-2"><label for="name" class="form-label"><b>Project Name:</b></label>
-                </div>
-                <div class="col-2"><input type="text" class="form-control text" style="width: 200px;" id="name"
-                                          placeholder="Project Name" name="name"></div>
+        <div class="row mt-3 mb-3">
+            <!--            Checkboxes for Roles-->
+            <div class="col"><label><b>Roles: </b></label></div>
+            <!--                <div class="col-2" >-->
+            <div class="col form-check form-check-inline">
+                <input class="form-check-input ch" type="checkbox" id="actor_ch" name="actor" value="actor">
+                <label class="form-check-label" for="actor_ch">Actor</label>
             </div>
 
-            <div class="row mt-3 mb-3">
-
-
-                <!--            Checkboxes for Roles-->
-                <div class="col"><label><b>Roles: </b></label></div>
-                <!--                <div class="col-2" >-->
-                <div class="col form-check form-check-inline">
-                    <input class="form-check-input ch" type="checkbox" id="actor_ch">
-                    <label class="form-check-label" for="actor_ch">Actor</label>
-                </div>
-
-                <div class="col form-check form-check-inline">
-                    <input class="form-check-input ch" type="checkbox" id="cinematographer_ch">
-                    <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>
-                </div>
-
-                <div class="col form-check form-check-inline">
-                    <input class="form-check-input ch" type="checkbox" id="editor_ch">
-                    <label class="form-check-label" for="editor_ch">Editor</label>
-                </div>
-
-                <div class="col form-check form-check-inline">
-                    <input class="form-check-input ch" type="checkbox" id="director_ch">
-                    <label class="form-check-label" for="director_ch">Director</label>
-                </div>
-
-                <div class="col form-check form-check-inline">
-                    <input class="form-check-input ch" type="checkbox" id="producer_ch">
-                    <label class="form-check-label" for="producer_ch">Producer</label>
-                </div>
-
-                <div class="col form-check form-check-inline">
-                    <input class="form-check-input ch" type="checkbox" id="screenwriter_ch">
-                    <label class="form-check-label" for="screenwriter_ch">Screenwriter</label>
-                    <!--                </div>-->
-                </div>
+            <div class="col form-check form-check-inline">
+                <input class="form-check-input ch" type="checkbox" id="cinematographer_ch" name="cin" value="cin">
+                <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>
             </div>
 
-            <div class="row mb-4 mt-3">
-                <div class="col-2"><label for="creator_name" class="form-label"><b>Creator Name:</b></label></div>
-                <div class="col-2"><input type="text" class="form-control text" style="width: 200px;" id="creator_name"
-                                          placeholder="Creator Name" name="creator_name"></div>
+            <div class="col form-check form-check-inline">
+                <input class="form-check-input ch" type="checkbox" id="editor_ch" name="editor" value="editor">
+                <label class="form-check-label" for="editor_ch">Editor</label>
             </div>
 
-            <div class="row mb-3">
-                <div class="col-2"><label for="creator_email" class="form-label"><b>Creator Email:</b></label></div>
-                <div class="col-2"><input type="text" class="form-control text" id="creator_email"
-                                          placeholder="name@place.domain" name="creator_email"></div>
+            <div class="col form-check form-check-inline">
+                <input class="form-check-input ch" type="checkbox" id="director_ch" name="director" value="director">
+                <label class="form-check-label" for="director_ch">Director</label>
             </div>
 
-            <!--            shooting date -->
-            <div class="row mb-3">
-                <div class="col-2"><label for="shooting_date"><b>Shooting Start Date:</b></label></div>
-                <div class="col-2"><input id="shooting_date" type="date" name="shooting_date" value=""
-                                          style="padding-right: 10%"></div>
+            <div class="col form-check form-check-inline">
+                <input class="form-check-input ch" type="checkbox" id="producer_ch" name="producer" value="producer">
+                <label class="form-check-label" for="producer_ch">Producer</label>
             </div>
 
-            <!--            paid and Unpaid-->
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="paidRadio" id="paidRadio1" value="Paid">
-                <label class="form-check-label" for="paidRadio1">Paid</label>
+            <div class="col form-check form-check-inline">
+                <input class="form-check-input ch" type="checkbox" id="screenwriter_ch" name="scrn" value="scrn">
+                <label class="form-check-label" for="screenwriter_ch">Screenwriter</label>
+                <!--                </div>-->
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="paidRadio" id="paidRadio2" value="Unpaid" checked>
-                <label class="form-check-label" for="paidRadio2">Unpaid</label>
-            </div>
+        </div>
 
-            <!--            for synopsis and Role Descriptions-->
-            <div class="mb-3 mt-3">
-                <label for="synopsis"><b>Synopsis:</b></label><br>
-                <textarea class="form-control" id="synopsis" name="synopsis" rows="4" cols="180"
-                          placeholder="Provide some information about your project."></textarea><br>
-            </div>
+        <div class="row mb-4 mt-3">
+            <div class="col-2"><label for="creator_name" class="form-label"><b>Creator Name:</b></label></div>
+            <div class="col-2"><input type="text" class="form-control text" style="width: 200px;" id="creator_name"
+                                      placeholder="Creator Name" name="creator_name"></div>
+        </div>
 
-            <div class="mb-3 mt-3">
-                <label for="role_des"><b>Role Descriptions:</b></label><br>
-                <textarea class="form-control" id="role_des" name="role_des" rows="4" cols="180"
-                          placeholder="Provide the role descriptions that are required for this project."></textarea><br>
-            </div>
+        <div class="row mb-3">
+            <div class="col-2"><label for="creator_email" class="form-label"><b>Creator Email:</b></label></div>
+            <div class="col-2"><input type="text" class="form-control text" id="creator_email"
+                                      placeholder="name@place.domain" name="creator_email"></div>
+        </div>
 
-            <div class="mb-3 mt-3">
-                <p id="error_message" style="color: red"></p>
-            </div>
+        <!--            shooting date -->
+        <div class="row mb-3">
+            <div class="col-2"><label for="shooting_date"><b>Shooting Start Date:</b></label></div>
+            <div class="col-2"><input id="shooting_date" type="date" name="shooting_date" value=""
+                                      style="padding-right: 10%"></div>
+        </div>
 
-            <input type="hidden" name="project_id" id="project_id">
+        <!--            paid and Unpaid-->
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="paidRadio" id="paidRadio1" value="Paid">
+            <label class="form-check-label" for="paidRadio1">Paid</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="paidRadio" id="paidRadio2" value="Unpaid" checked>
+            <label class="form-check-label" for="paidRadio2">Unpaid</label>
+        </div>
+
+        <!--            for synopsis and Role Descriptions-->
+        <div class="mb-3 mt-3">
+            <label for="synopsis"><b>Synopsis:</b></label><br>
+            <textarea class="form-control" id="synopsis" name="synopsis" rows="4" cols="180"
+                      placeholder="Provide some information about your project."></textarea><br>
+        </div>
+
+        <div class="mb-3 mt-3">
+            <label for="role_des"><b>Role Descriptions:</b></label><br>
+            <textarea class="form-control" id="role_des" name="role_des" rows="4" cols="180"
+                      placeholder="Provide the role descriptions that are required for this project."></textarea><br>
+        </div>
+
+        <div class="mb-3 mt-3">
+            <p id="error_message" style="color: red"></p>
+        </div>
 
 
-            <div class="mb-5" style="margin-left: 40%">
-                <button type="submit" class="btn btn-light"
-                        style="width: 30%; background-color: var(--burnt-sienna); color: white";>Submit Application
-                </button>
-            </div>
-        </form>
+        <div class="mb-5" style="margin-left: 40%">
+            <button type="submit" class="btn btn-light"
+                    style="width: 30%; background-color: var(--burnt-sienna); color: white" ;>Submit Application
+            </button>
+        </div>
+    </form>
 
 </section>
 
@@ -170,9 +164,10 @@
 <section id="footer">
     <p>
         <script defer>
-            function getYear(){
+            function getYear() {
                 return (new Date().getFullYear())
             }
+
             $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
         </script>
     </p>
