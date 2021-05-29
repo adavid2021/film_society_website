@@ -30,75 +30,86 @@
 </head>
 <body class="container" style="background-color: var(--columbia-blue)">
 
-
 <nav class="navbar navbar-expand-lg navbar-dark cardstrading" style="background-color: var(--burnt-sienna);">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img src="img/1200px-Clark_University_seal.svg.png"alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
+        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img
+                src="img/1200px-Clark_University_seal.svg.png" alt="" width="50" height="50"
+                class="d-inline-block align-text-top"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 25%">
-            <div class="navbar-nav"><a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="#">Home</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" aria-current="page" href="/home.html">About Us</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/index.html">Current Projects</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/project_submission.html">Create a New Project</a>
+            <div class="navbar-nav"><a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;"
+                                       href="#">Home</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" aria-current="page"
+                   href="/home.html">About Us</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" href="/index.html">Current
+                    Projects</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem;" href="/project_submission.html">Create
+                    a New Project</a>
 
             </div>
         </div>
     </div>
 </nav>
 
-
-<!--max-width: 60%;-->
-
 <section id="filters">
     <div class="input-group mt-4 mb-3 d-flex justify-content-end">
-        <a href="/project_submission.html" class="btn rounded" style="background-color: var(--burnt-sienna); color: white">Create a New Project</a>
+        <a href="/project_submission.html" class="btn rounded"
+           style="background-color: var(--burnt-sienna); color: white">Create a New Project</a>
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="col-lg-8 col-md-10 col-sm-10">
             <div class="card text-white mt-3 mb-3" style="background-color: #354950FF">
-                <div class="card-body" >
+                <div class="card-body">
                     <h5 class="card-title">Filter Projects By Available Roles</h5>
                     <p class="card-text">Select the roles that you are interested in</p>
 
-                    <div class="row justify-content-between py-3">
+                    <div class="row justify-content-between py-3 px-3">
                         <div class="col-2">
                             <div class="form-check">
                                 <input class="form-check-input pl-2" type="checkbox" id="actor_checkbox" value="actor">
                                 <label class="form-check-label pr-2" for="actor_checkbox">Actor</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="director_checkbox" value="director">
+                                <input class="form-check-input pl-2" type="checkbox" id="director_checkbox"
+                                       value="director">
                                 <label class="form-check-label pr-2" for="director_checkbox">Director</label>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox" value="cinematographer">
-                                <label class="form-check-label pr-2" for="cinematographer_checkbox">Cinematographer</label>
+                                <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox"
+                                       value="cinematographer">
+                                <label class="form-check-label pr-2"
+                                       for="cinematographer_checkbox">Cinematographer</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox" value="producer">
+                                <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox"
+                                       value="producer">
                                 <label class="form-check-label pr-2" for="producer_checkbox">Producer</label>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox" value="editor">
+                                <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox"
+                                       value="editor">
                                 <label class="form-check-label pr-2" for="editor_checkbox">Editor</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox" value="screenwriter">
-                                <label class="form-check-label pr-2" for="screenwriter_checkbox">Screenwriter</label>
+                                <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox"
+                                       value="screenwriter">
+                                <label class="form-check-label pr-2" style="margin-right: 10px" for="screenwriter_checkbox">Screenwriter</label>
                             </div>
                         </div>
                     </div>
                     <div class="col-2">
                         <div class="input-group mb-3">
-                            <button class="btn btn-light" style="background-color: var(--burnt-sienna); color: white" onclick="searchProjects()">Search</button>
+                            <button class="btn btn-light" style="background-color: var(--burnt-sienna); color: white"
+                                    onclick="searchProjects()">Search
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -108,23 +119,31 @@
 </section>
 
 <section id="project_section">
-    <div class="row justify-content-center" >
-        <div class="col-lg-10 col-md-11 col-sm-12">
-            <ul id="project_list" class="list-group">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-11">
+            <ul id="left_list" class="list-group">
+
+            </ul>
+        </div>
+        <div class="col-lg-5 col-md-11">
+            <ul id="right_list" class="list-group">
 
             </ul>
         </div>
     </div>
 </section>
+
 <p class="pad"></p>
+
 <section id="footer">
     <p style="color: floralwhite;">
         <script defer>
-            function getYear(){
+            function getYear() {
                 return (new Date().getFullYear())
             }
+
             $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
-    </script>
+        </script>
     </p>
 
 </section>
