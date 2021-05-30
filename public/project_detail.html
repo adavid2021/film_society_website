@@ -32,32 +32,83 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark cardstrading" style="background-color: var(--burnt-sienna);">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img src="img/1200px-Clark_University_seal.svg.png"alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
+        <a class="navbar-brand" style="color: var(--trypan-blue-2);" href="#"><img
+                src="img/1200px-Clark_University_seal.svg.png" alt="" width="50" height="50"
+                class="d-inline-block align-text-top"></a>
+        <a class="navbar-brand" style="font-family: 'Limelight', cursive; font-size: 2.0rem;" href="#">Clark Film
+            Society</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 25%">
-            <div class="navbar-nav"><a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="#">Home</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" aria-current="page" href="/home.html">About Us</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/index.html">Current Projects</a>
-                <a class="nav-link" style= "color:var(--platinum); font-size: 1.3rem;" href="/project_submission.html">Create a New Project</a>
-
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 5%">
+            <div class="navbar-nav">
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem; font-family: 'Limelight', cursive;"
+                   aria-current="page" href="/home.html">Home</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem; font-family: 'Limelight', cursive;"
+                   href="/index.html">Current Projects</a>
+                <a class="nav-link" style="color:var(--platinum); font-size: 1.3rem; font-family: 'Limelight', cursive;"
+                   href="/project_submission.html">Create a New Project</a>
 
             </div>
         </div>
     </div>
 </nav>
 
-<section id="header_section" >
+
+<section id="header_section">
     <div class="row pt-4 px-3">
         <div class="card text-light" style="background-color: var(--cadet)">
             <div class="card-header" style="background-color: var(--cadet)">
                 <h2 id="title">title</h2>
             </div>
-            <div class="card-body" style="background-color: var(--cadet)">
-                <p id="role_details"></p>
+            <div class="col-3">
+                <div class="card-body" style="background-color: var(--cadet)">
+                    <div id="available_roles"></div>
+                    <div id="synopsis"></div>
+                    <p id="starting_date"></p>
+                    <p id="role_details"></p>
+                </div>
             </div>
+            <div class="row mb-3">
+                <a class="btn btn-light" style="background-color: var(--burnt-sienna); color: white; margin-left: 20%;max-width: 20%"
+                   href="/application_submission.html">Apply
+                </a>
+            </div>
+
+        </div>
+
+            <!--            <div class="row" style="height: 50%">-->
+            <!--                <div class="col-lg-10">-->
+            <!--                    &lt;!&ndash;            <div class="row"><div class="col-3" style="font-size: xxx-large" id="aval"></div></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <div class="col-2" id="available_roles"><b>Available Roles:</b></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;                        <div class="col" id="available_roles" style="margin-left: 30%"></div>&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    &lt;!&ndash;                    <p id="starting_date">Filming Date:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbs</p>&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <div class="col-2"><b>Filming Date:</b></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <div class="col-2" id="starting_date" style="margin-left: 30%"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <div class="col-2"><b>Synopsis:</b></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <div class="col-2" id="synopsis" style="margin-left: 30%"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <div class="col-2"><b>Role Details:</b></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                        <div class="col-2" id="role_details" style="margin-left: 30%"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+            <!--                    <div class="row mt-5 mb-3">-->
+            <!--                        &lt;!&ndash;                        <button class="btn btn-light" style="background-color: var(&#45;&#45;burnt-sienna); color: white">Apply&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                        </button>&ndash;&gt;-->
+            <!--                        <a class="btn btn-light" style="background-color: var(&#45;&#45;burnt-sienna); color: white; margin-left: 20%;max-width: 20%"-->
+            <!--                           href="/application_submission.html">Apply-->
+            <!--                        </a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+
         </div>
     </div>
 </section>
@@ -65,12 +116,15 @@
 <section id="role_section">
     <div class="row justify-content-center">
         <div class="col-11">
-            <ul id="role_list" class="list-group text-center justify-content-center py-2" style="width: 80%; padding-left: 20%;">
+            <ul id="role_list" class="list-group text-center justify-content-center py-2"
+                style="width: 80%; padding-left: 20%;">
 
             </ul>
             <p class="pad"></p>
-            <div class="card text-success" style="background-color: var(--cadet)">
-                <div class="card-header bg-light" style="font-size: 200%; padding-left: 2%; color: var(--cadet)">Applicants</div>
+            <div class="card text-success mb-5" style="background-color: var(--cadet)">
+                <div class="card-header bg-light" style="font-size: 200%; padding-left: 2%; color: var(--cadet)">
+                    Applicants
+                </div>
                 <div class="card-body text-light">
                     <ul id="applicant_list" class="list-group">
 
@@ -84,9 +138,10 @@
 <section id="footer" style="color: white">
     <p>
         <script>
-            function getYear(){
+            function getYear() {
                 return (new Date().getFullYear())
             }
+
             $('#footer p').text('A website by Chandra Adhikari, Natalia Khan and Aidan David, All rights reserved @ ' + getYear())
         </script>
     </p>

@@ -25,11 +25,11 @@
 }
 
 #carousel img{
-    height: 500px;
-    max-width: 70%;
+    height: 400px;
+    max-width: 60%;
     align-content: center;
     margin-right: 30%;
-    margin-left: 15%;
+    margin-left: 20%;
 }
 #footer{
     height: 80px;
