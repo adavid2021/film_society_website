@@ -2,7 +2,8 @@
     --burnt-sienna: #dd6e42;
     --dutch-white: #e8dab2ff;
     --cadet: #4f6d7aff;
-    --columbia-blue: #c0d6dfff;
+    --columbia-blue: #b5cad2;
+    --columbia-blue4: #063041;
     --platinum: #eaeaeaff;
     --flickr-pink: #f72585ff;
     --byzantine: #b5179eff;
@@ -14,6 +15,10 @@
     --ultramarine-blue: #4361eeff;
     --dodger-blue: #4895efff;
     --vivid-sky-blue: #4cc9f0ff;
+}
+
+body{
+    background-color: #b3c5cd;
 }
 #carousel{
     padding-top: 5%;
@@ -38,4 +43,24 @@
     text-align: center;
     padding-top: 10px;
     font-family: sans-serif;
+}
+
+.nav-items{
+    float: right;
+    margin-left: 40%;
+}
+
+.nav-inner{
+    color:var(--platinum);
+    font-size: 1.3rem;
+    font-family: 'Limelight', cursive;
+}
+
+.about{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.navbar-brand img{
+    color: var(--trypan-blue-2);
 }
