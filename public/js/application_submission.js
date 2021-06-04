@@ -16,11 +16,11 @@ const input = JSON.parse(urlParams.get("input")); // converting back into json
 
 // invisible project id field
 if (project_id) {
+    console.log("id in js is currently: ",project_id);
     $('#project_id').val(project_id);
 }
 
 if (error_message) {
-
     if (error_message.includes('applicant_name')) {
         $('#applicant_name').addClass('is-invalid text-danger');
     }
@@ -99,7 +99,7 @@ $('form').on('submit', function () {
         return false;
     }
 
-    if (!$('#preferred_roles,textarea').val()) {
+    if (!$('#preferred_roles').val()) {
         errorMessage = "Provide some of your preferred roles"
         $('#preferred_roles').addClass('is-invalid text-danger');
         $('#error_message').text(errorMessage);
@@ -127,7 +127,8 @@ $('form').on('submit', function () {
 
 // returns false if the preferred roles section is formatted incorrectly, otherwise true
 function formattedCorrectly() {
-    const user_input = $('#preferred_roles,textarea').val();
+    const user_input = $('#preferred_roles').val();
+    // console.log("VALUE: ", $('#preferred_roles').val());
     const input_string = user_input.split(" ");
     const correct_role_strings =
         ["actor", "Actor", "cinematographer", "Cinematographer",
@@ -136,9 +137,10 @@ function formattedCorrectly() {
 
     let i_string_list = [];
 
+    // console.log("input string: ", input_string);
     input_string.forEach(input => {
         correct_role_strings.forEach(role => {
-            console.log(input, " vs ", role);
+            // console.log(input, " vs ", role);
             if (input === role) {
                 i_string_list.push(input);
             }
@@ -155,6 +157,8 @@ function formattedCorrectly() {
             out = false;
         }
     }
+
+    // console.log("i string list: ", i_string_list);
     console.log("out ", out);
 
     return (out);

@@ -44,6 +44,11 @@ function load_project(project) {
         `<p>${project.information[0].film_date}</p></div>`
     )
 
+    // href="${applyToRole(project.role_list.split(' '))}"
+
+    $('#last').append(function (idx) {
+        return `<a class="btn btn-light" href="${applyToRole(project.role_list.split(' '))}" style="background-color: var(--burnt-sienna); max-width: 20%; margin-left: 5%; margin-bottom: 5%">Apply</a>`
+    })
 
     $('#available_roles').append(function (idx) {
         let button_html = ``; //<h3><b>Available Roles:</b></h3>
@@ -92,11 +97,11 @@ function addRoles(applicant) {
 }
 
 
-// function applyToRole(list) {
-//     // console.log("ci: " + currentIndex)
-//     console.log("list: " + list);
-//     return "/application_submission?p_id=" + (project._id).toString() + "&p_role=" + (list[currentIndex]);
-// }
+function applyToRole(list) {
+    // console.log("ci: " + currentIndex)
+    // console.log("list: " + list);
+    return "/application_submission?p_id=" + (project._id).toString() + "&p_role=" + (list[currentIndex]);
+}
 
 //when entire page has been loaded execute this function
 $(document).ready(function () {
