@@ -2,6 +2,14 @@
 function goBack(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const project_id = urlParams.get("p_id");
-    location.href = "/project_submission?p_id=" + project_id
+    const checked = urlParams.get('checked');
+    const name = urlParams.get('name');
+    const email = urlParams.get('email');
+    const date = urlParams.get('date');
+    const isPaid = urlParams.get('isPaid');
+    const synopsis = urlParams.get('synopsis');
+    const role_descriptions = urlParams.get('role_descriptions');
+
+    location.href = "/project_submission?name=" + name + "&email=" + email
+        + "&date=" + date + "&synopsis=" + synopsis + "&role_descriptions=" + role_descriptions + "&checked=" + checked;
 }

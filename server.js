@@ -206,49 +206,60 @@ app.post("/new-project", function (req, res) {
             console.log("project title: ", project.title);
             project_names.push(project.title);
         })
+
+        // unique applicant name
+        let role_list = "";
+        let role_params = "";
+
+        if (req.body.actor) {
+            role_list += "actor ";
+            role_params += "0";
+        }
+        if (req.body.cin) {
+            role_list += "cinematographer ";
+            role_params += "1";
+        }
+        if (req.body.editor) {
+            role_list += "editor ";
+            role_params += "2";
+        }
+        if (req.body.director) {
+            role_list += "director ";
+            role_params += "3";
+        }
+        if (req.body.producer) {
+            role_list += "producer ";
+            role_params += "4";
+        }
+        if (req.body.scrn) {
+            role_list += "screenwriter ";
+            role_params += "5";
+        }
+
+        // creating correctly formatted date from date object
+        let date = req.body.shooting_date.toString();
+        let new_date = date.substring(5, 7) + "-" + date.substring(8, 10) + "-" + date.substring(0, 4);
+
+        const new_project = {
+            "title": req.body.title,
+            "role_list": role_list,
+            "information": [{
+                "film_date": new_date,
+                "paid": req.body.paidRadio,
+                "creator_name": req.body.creator_name,
+                "creator_email": req.body.creator_email,
+                "synopsis": req.body.synopsis
+            }],
+            "role_descriptions": req.body.role_des,
+            "applicants": []
+        }
+
         if (project_names.includes(req.body.title)) {
-            res.redirect("/project_failure");
+            // console.log("FAILURE CASE");
+            res.redirect("/project_failure?name=" + req.body.creator_name + "&email=" + req.body.creator_email
+            + "&date=" + req.body.shooting_date + "&synopsis=" + req.body.synopsis + "&role_descriptions=" + req.body.role_des + "&checked=" + role_params);
         } else {
-            // unique applicant name
-            let role_list = "";
-
-            if (req.body.actor) {
-                role_list += "actor "
-            }
-            if (req.body.cin) {
-                role_list += "cinematographer "
-            }
-            if (req.body.director) {
-                role_list += "director "
-            }
-            if (req.body.editor) {
-                role_list += "editor "
-            }
-            if (req.body.producer) {
-                role_list += "producer "
-            }
-            if (req.body.scrn) {
-                role_list += "screenwriter "
-            }
-
-            // creating correctly formatted date from date object
-            let date = req.body.shooting_date.toString();
-            let new_date = date.substring(5, 7) + "-" + date.substring(8, 10) + "-" + date.substring(0, 4);
-
-            const new_project = {
-                "title": req.body.title,
-                "role_list": role_list,
-                "information": [{
-                    "film_date": new_date,
-                    "paid": req.body.paidRadio,
-                    "creator_name": req.body.creator_name,
-                    "creator_email": req.body.creator_email,
-                    "synopsis": req.body.synopsis
-                }],
-                "role_descriptions": req.body.role_des,
-                "applicants": []
-            }
-
+            // console.log("SUCCESS CASE");
             const np = new Project(new_project);
             np.save(function (err, new_project) {
                 if (err) {
