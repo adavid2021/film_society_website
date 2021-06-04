@@ -26,7 +26,7 @@
 .card-body{
     text-align: center;
     justify-content: center;
-    margin-top: 17%;
+    margin-top: 15%;
 }
 
 .success-card{
@@ -37,13 +37,17 @@
 .success-card h1{
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 4%;
+    margin-bottom: 4.4%;
     /*padding-top: 3%;*/
+
+}
+.project-failure{
+    margin-bottom: 5%;
 
 }
 
 .card-container{
-    margin-top: 10%;
+    margin-top: 8%;
 }
 .success-btn{
     justify-content: center;

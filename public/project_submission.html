@@ -59,7 +59,7 @@
 <!--Changes from Application.html-->
 
 
-<section style="margin-top: 2%; margin-left: 2%">
+<section class="container" style="margin-top: 2%;">
     <form action="/new-project" method="post" id="applicant_submission">
 
         <div class="row">
@@ -69,45 +69,95 @@
                                       placeholder="Project Name" name="title"></div>
         </div>
 
+<!--        <div class="row mt-3 mb-3">-->
+<!--            &lt;!&ndash;            Checkboxes for Roles&ndash;&gt;-->
+<!--            <div class="col"><label><b>Roles: </b></label></div>-->
+<!--            &lt;!&ndash;                <div class="col-2" >&ndash;&gt;-->
+<!--            <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input ch" type="checkbox" id="actor_ch" name="actor" value="actor">-->
+<!--                <label class="form-check-label" for="actor_ch">Actor</label>-->
+<!--            </div>-->
+
+<!--            <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input ch" type="checkbox" id="cinematographer_ch" name="cin" value="cin">-->
+<!--                <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>-->
+<!--            </div>-->
+
+<!--            <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input ch" type="checkbox" id="editor_ch" name="editor" value="editor">-->
+<!--                <label class="form-check-label" for="editor_ch">Editor</label>-->
+<!--            </div>-->
+
+<!--            <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input ch" type="checkbox" id="director_ch" name="director" value="director">-->
+<!--                <label class="form-check-label" for="director_ch">Director</label>-->
+<!--            </div>-->
+
+<!--            <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input ch" type="checkbox" id="producer_ch" name="producer" value="producer">-->
+<!--                <label class="form-check-label" for="producer_ch">Producer</label>-->
+<!--            </div>-->
+
+<!--            <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input ch" type="checkbox" id="screenwriter_ch" name="scrn" value="scrn">-->
+<!--                <label class="form-check-label" for="screenwriter_ch">Screenwriter</label>-->
+<!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+
         <div class="row mt-3 mb-3">
             <!--            Checkboxes for Roles-->
-            <div class="col"><label><b>Roles: </b></label></div>
+            <div class="col-2"><label><b>Roles: </b></label></div>
             <!--                <div class="col-2" >-->
-            <div class="form-check form-check-inline">
-                <input class="form-check-input ch" type="checkbox" id="actor_ch" name="actor" value="actor">
-                <label class="form-check-label" for="actor_ch">Actor</label>
-            </div>
+            <div class="col-10">
 
-            <!--            <div class="col form-check form-check-inline">-->
-            <!--                <input class="form-check-input ch" type="checkbox" id="cinematographer_ch" name="cin" value="cin">-->
-            <!--                <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>-->
-            <!--            </div>-->
-            <div class="form-check form-check-inline">
-                <input class="form-check-input ch" type="checkbox" id="cinematographer_ch" name="cin" value="cin">
-                <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>
-            </div>
+                <div class="row">
+                    <div class="col-lg-1 col-xs-4 form-check form-check-inline">
+                        <input class="form-check-input ch" type="checkbox" id="actor_ch" name="actor" value="actor">
+                        <label class="form-check-label" for="actor_ch">Actor</label>
+                    </div>
 
-            <div class="form-check form-check-inline">
-                <input class="form-check-input ch" type="checkbox" id="editor_ch" name="editor" value="editor">
-                <label class="form-check-label" for="editor_ch">Editor</label>
-            </div>
+                    <!--            <div class="col form-check form-check-inline">-->
+                    <!--                <input class="form-check-input ch" type="checkbox" id="cinematographer_ch" name="cin" value="cin">-->
+                    <!--                <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>-->
+                    <!--            </div>-->
+                    <div class="col-lg-2 col-xs-4 form-check form-check-inline">
+                        <input class="form-check-input ch" type="checkbox" id="cinematographer_ch" name="cin"
+                               value="cin">
+                        <label class="form-check-label" for="cinematographer_ch">Cinematographer</label>
+                    </div>
 
-            <div class="form-check form-check-inline">
-                <input class="form-check-input ch" type="checkbox" id="director_ch" name="director" value="director">
-                <label class="form-check-label" for="director_ch">Director</label>
-            </div>
+                    <div class="col-lg-1 col-xs-4 form-check form-check-inline">
+                        <input class="form-check-input ch" type="checkbox" id="editor_ch" name="editor" value="editor">
+                        <label class="form-check-label" for="editor_ch">Editor</label>
+                    </div>
+                    <!--            <div class="offset-sm-3"></div>-->
+                    <div class="col-lg-2 col-xs-4 form-check form-check-inline">
+                        <input class="form-check-input ch" type="checkbox" id="director_ch" name="director"
+                               value="director">
+                        <label class="form-check-label" for="director_ch">Director</label>
+                    </div>
 
-            <div class="form-check form-check-inline">
-                <input class="form-check-input ch" type="checkbox" id="producer_ch" name="producer" value="producer">
-                <label class="form-check-label" for="producer_ch">Producer</label>
-            </div>
+                    <div class="col-lg-2 col-xs-4 form-check form-check-inline">
+                        <input class="form-check-input ch" type="checkbox" id="producer_ch" name="producer"
+                               value="producer">
+                        <label class="form-check-label" for="producer_ch">Producer</label>
+                    </div>
 
-            <div class="form-check form-check-inline">
-                <input class="form-check-input ch" type="checkbox" id="screenwriter_ch" name="scrn" value="scrn">
-                <label class="form-check-label" for="screenwriter_ch">Screenwriter</label>
-                <!--                </div>-->
+                    <div class="col-lg-2 col-xs-4 form-check form-check-inline">
+                        <input class="form-check-input ch" type="checkbox" id="screenwriter_ch" name="scrn"
+                               value="scrn">
+                        <label class="form-check-label" for="screenwriter_ch">Screenwriter</label>
+                        <!--                </div>-->
+                    </div>
+                </div>
             </div>
         </div>
+
+
+
 
         <div class="row mb-4 mt-3">
             <div class="col-2"><label for="creator_name" class="form-label"><b>Creator Name:</b></label></div>

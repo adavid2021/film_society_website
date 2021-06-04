@@ -79,7 +79,7 @@
 
 .aval-role-title {
     font-size: x-large;
-    padding-left: 2%;
+    /*padding-left: 2%;*/
     color: var(--cadet);
     border-color: white;
 
