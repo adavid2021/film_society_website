@@ -46,3 +46,7 @@
     padding-top: 10px;
     font-family: sans-serif;
 }
+
+.creator_info h6{
+    white-space: nowrap;
+}

@@ -32,30 +32,45 @@ function load_project(project) {
     $('#title').text(project.title);
     // $('#role_details').text("Role descriptions: " + project.role_descriptions);
     $('#role_details').append(
-        `<div><h6><b>Role descriptions: </b></h6>`+
-        `<h6>${project.role_descriptions}</h6></div>`
+        // `<div><h6><b>Role descriptions: </b></h6>` +
+        `<p>${project.role_descriptions}</p></div>`
     )
     $('#synopsis').append(
-        `<div class="row"><h6><b>Synopsis: </b></h6>` +
-        `<h6>${project.information[0].synopsis}</h6></div>`
-
+        // `<div class="row"><h6><b>Synopsis: </b></h6>` +
+        `<p>${project.information[0].synopsis}</p></div>`
     )
     $('#starting_date').append(
-        `<div class="row"><h6><b>Filming Date: </b></h6>` +
-        `<h6>${project.information[0].film_date}</h6></div>`
-
+        // `<div class="row"><h6><b>Filming Date: </b></h6>` +
+        `<p>${project.information[0].film_date}</p></div>`
     )
 
+
     $('#available_roles').append(function (idx) {
-        let button_html = `<h3><b>Available Roles:</b></h3>`;
+        let button_html = ``; //<h3><b>Available Roles:</b></h3>
         const list = project.role_list.split(" ");
         list.forEach(role => {
             if (role) {
-                button_html += `<div class="card card-header" style="padding: 5px; background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</div>`
+                button_html += `<div class="card card-header my-2" style="text-align: center; padding: 5px; background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</div>`
             }
         });
         return button_html
     })
+
+    // <p id="is_paid"></p>
+    // <p id="creator_name"></p>
+    // <p id="creator_email"></p>
+
+    $('#is_paid').append(
+        `<h6>${project.information[0].paid}</h6></div>`
+    )
+
+    $('#creator_name').append(
+        `<p>${project.information[0].creator_name}</p></div>`
+    )
+
+    $('#creator_email').append(
+        `<p>${project.information[0].creator_email}</p></div>`
+    )
 
     applicant_list.forEach(applicant => {
         $('#applicant_list').append(

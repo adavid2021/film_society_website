@@ -54,82 +54,122 @@
     </div>
 </nav>
 
-
-
+<!--const projectSchema = {-->
+<!--title: String,-->
+<!--role_list: String,-->
+<!--information: [{-->
+<!--film_date: String,-->
+<!--paid: String,-->
+<!--creator_name: String,-->
+<!--creator_email: String,-->
+<!--synopsis: String-->
+<!--}],-->
+<!--role_descriptions: String,-->
+<!--applicants: [applicantSchema]-->
+<!--}-->
 <section id="header_section">
     <div class="row pt-4 px-3">
         <div class="card text-light" style="background-color: var(--cadet)">
             <div class="card-header" style="background-color: var(--cadet)">
                 <h2 id="title">title</h2>
             </div>
-            <div class="col-3">
-                <div class="card-body" style="background-color: var(--cadet)">
-                    <div id="available_roles"></div>
-                    <div id="synopsis"></div>
-                    <p id="starting_date"></p>
-                    <p id="role_details"></p>
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-8">
+                    <div class="card-body" style="background-color: var(--cadet)">
+                        <div class="card text-success mb-5" style="background-color: var(--cadet); max-width: 400px">
+                            <div class="card-header bg-light text-center" style="font-size: 200%; padding-left: 2%; color: var(--cadet)">
+                                Available Roles
+                            </div>
+                            <div class="card-body">
+                                <div class="col justify-content-center" id="available_roles"></div>
+                            </div>
+<!--                            <h5 style="margin-left: 10%"><b>Available Roles</b></h5>-->
+                        </div>
+                        <div class="pad"></div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <h5>Starting Date:</h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <p id="starting_date"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5">
+                                        <h5>Role Details:</h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <p id="role_details"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5">
+                                        <h5>This project is</h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <p id="is_paid"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5">
+                                        <h5>Synopsis:</h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <div id="synopsis"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="card-body" style="background-color: var(--cadet)">
+                        <div class="row">
+                            <div class="row creator_info">
+                                <div class="col-4">
+                                    <h5 style="white-space: nowrap">Creator Name:</h5>
+                                </div>
+                                <div class="col-6">
+                                    <p id="creator_name"></p>
+                                </div>
+                            </div>
+                            <div class="row creator_info">
+                                <div class="col-4">
+                                    <h5 style="white-space: nowrap">Creator Email:</h5>
+                                </div>
+                                <div class="col-6">
+                                    <p id="creator_email"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-11">
+                            <ul id="role_list" class="list-group text-center justify-content-center py-2"
+                                style="width: 80%; padding-left: 20%;">
+
+                            </ul>
+                            <div class="card text-success mb-5" style="background-color: var(--cadet); max-width: 400px">
+                                <div class="card-header bg-light text-center" style="font-size: 200%; padding-left: 2%; color: var(--cadet)">
+                                    Applicants
+                                </div>
+                                <div class="card-body text-light">
+                                    <ul id="applicant_list" class="list-group">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row mb-3">
-                <a class="btn btn-light" style="background-color: var(--burnt-sienna); color: white; margin-left: 20%;max-width: 20%"
+                <a class="btn btn-light"
+                   style="background-color: var(--burnt-sienna); color: white; margin-left: 5%;max-width: 20%"
                    href="/application_submission.html">Apply
                 </a>
-            </div>
-
-        </div>
-
-            <!--            <div class="row" style="height: 50%">-->
-            <!--                <div class="col-lg-10">-->
-            <!--                    &lt;!&ndash;            <div class="row"><div class="col-3" style="font-size: xxx-large" id="aval"></div></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;                        <div class="col-2" id="available_roles"><b>Available Roles:</b></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;                        <div class="col" id="available_roles" style="margin-left: 30%"></div>&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    &lt;!&ndash;                    <p id="starting_date">Filming Date:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbs</p>&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;                        <div class="col-2"><b>Filming Date:</b></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                        <div class="col-2" id="starting_date" style="margin-left: 30%"></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;                        <div class="col-2"><b>Synopsis:</b></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                        <div class="col-2" id="synopsis" style="margin-left: 30%"></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
-            <!--&lt;!&ndash;                        <div class="col-2"><b>Role Details:</b></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                        <div class="col-2" id="role_details" style="margin-left: 30%"></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-            <!--                    <div class="row mt-5 mb-3">-->
-            <!--                        &lt;!&ndash;                        <button class="btn btn-light" style="background-color: var(&#45;&#45;burnt-sienna); color: white">Apply&ndash;&gt;-->
-            <!--                        &lt;!&ndash;                        </button>&ndash;&gt;-->
-            <!--                        <a class="btn btn-light" style="background-color: var(&#45;&#45;burnt-sienna); color: white; margin-left: 20%;max-width: 20%"-->
-            <!--                           href="/application_submission.html">Apply-->
-            <!--                        </a>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-
-
-        </div>
-    </div>
-</section>
-
-<section id="role_section">
-    <div class="row justify-content-center">
-        <div class="col-11">
-            <ul id="role_list" class="list-group text-center justify-content-center py-2"
-                style="width: 80%; padding-left: 20%;">
-
-            </ul>
-            <p class="pad"></p>
-            <div class="card text-success mb-5" style="background-color: var(--cadet)">
-                <div class="card-header bg-light" style="font-size: 200%; padding-left: 2%; color: var(--cadet)">
-                    Applicants
-                </div>
-                <div class="card-body text-light">
-                    <ul id="applicant_list" class="list-group">
-
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
