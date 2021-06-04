@@ -1,4 +1,4 @@
-:root{
+:root {
 
     --burnt-sienna: #dd6e42ff;
     --dutch-white: #e8dab2ff;
@@ -16,6 +16,7 @@
     --dodger-blue: #4895efff;
     --vivid-sky-blue: #4cc9f0ff;
 }
+
 .even_row {
     background-color: var(--cadet);
     color: var(--platinum);
@@ -25,6 +26,7 @@
     background-color: var(--columbia-blue);
     color: var(--platinum);
 }
+
 .apply_button {
     width: 100%;
 }
@@ -34,19 +36,59 @@
     padding-bottom: 20px;
 }
 
-#error_section{
+#error_section {
     width: 100px;
-    length:100px
-}
-#footer{
-    height: 80px;
-    background-color: var(--burnt-sienna);
-    color: var(--platinum);
-    text-align: center;
-    padding-top: 10px;
-    font-family: sans-serif;
+    length: 100px
 }
 
-.creator_info h6{
+
+.creator_info h6 {
     white-space: nowrap;
+}
+
+.apply-btn {
+    background-color: var(--burnt-sienna);
+    /*max-width: 50%;*/
+    margin-right: 6%;
+    margin-bottom: 5%;
+    float: right;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: none;
+    width: 30%;
+}
+
+.aval-roles {
+    text-align: center;
+    padding: 7px;
+    color: white;
+    border-color: var(--burnt-sienna);
+    border-width: 2px
+}
+
+.text-light {
+    background-color: var(--cadet);
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    /*margin-right: 10%;*/
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+.aval-role-title {
+    font-size: x-large;
+    padding-left: 2%;
+    color: var(--cadet);
+    border-color: white;
+
+}
+
+#available_roles{
+    border-color: white;
+
+}
+.text-lt{
+    color: var(--cadet);
 }

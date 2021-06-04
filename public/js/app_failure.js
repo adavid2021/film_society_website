@@ -1,3 +1,4 @@
+//function that takes you back to application page
 function goBack(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);

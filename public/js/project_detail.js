@@ -30,24 +30,18 @@ function load_project(project) {
     const r_list = project.role_list.split(" ");
     const applicant_list = project.applicants
     $('#title').text(project.title);
-    // $('#role_details').text("Role descriptions: " + project.role_descriptions);
     $('#role_details').append(
-        // `<div><h6><b>Role descriptions: </b></h6>` +
         `<p>${project.role_descriptions}</p></div>`
     )
     $('#synopsis').append(
-        // `<div class="row"><h6><b>Synopsis: </b></h6>` +
         `<p>${project.information[0].synopsis}</p></div>`
     )
     $('#starting_date').append(
-        // `<div class="row"><h6><b>Filming Date: </b></h6>` +
         `<p>${project.information[0].film_date}</p></div>`
     )
 
-    // href="${applyToRole(project.role_list.split(' '))}"
-
     $('#last').append(function (idx) {
-        return `<a class="btn btn-light" href="${applyToRole(project.role_list.split(' '))}" style="background-color: var(--burnt-sienna); max-width: 20%; margin-left: 5%; margin-bottom: 5%">Apply</a>`
+        return `<a class="btn btn-light apply-btn" href="${applyToRole(project.role_list.split(' '))}">Apply</a>`
     })
 
     $('#available_roles').append(function (idx) {
@@ -55,15 +49,11 @@ function load_project(project) {
         const list = project.role_list.split(" ");
         list.forEach(role => {
             if (role) {
-                button_html += `<div class="card card-header my-2" style="text-align: center; padding: 5px; background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</div>`
+                button_html += `<div class="card card-header my-2 aval-roles">${role}</div>`
             }
         });
         return button_html
     })
-
-    // <p id="is_paid"></p>
-    // <p id="creator_name"></p>
-    // <p id="creator_email"></p>
 
     $('#is_paid').append(
         `<h6>${project.information[0].paid}</h6></div>`
@@ -87,7 +77,7 @@ function load_project(project) {
         );
     });
 }
-
+//function to add users preferred roles with space
 function addRoles(applicant) {
     let output = '';
     applicant.preferred_roles.forEach(role => {
@@ -96,10 +86,8 @@ function addRoles(applicant) {
     return `<p>Preferred Roles: ${output}</p>`;
 }
 
-
+//when user apply to the postion it passes the project id information
 function applyToRole(list) {
-    // console.log("ci: " + currentIndex)
-    // console.log("list: " + list);
     return "/application_submission?p_id=" + (project._id).toString() + "&p_role=" + (list[currentIndex]);
 }
 

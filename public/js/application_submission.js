@@ -1,12 +1,3 @@
-// function fillApplicant(applicant) {
-//     // $('#checkbox').prop("checked", car.avail === "available");
-//     // $('#sold').prop("checked", car.avail === "sold");
-//     $('#applicant_name').val(applicant.applicant_name);
-//     $('#applicant_email').val(applicant.applicant_email);
-//     $('#applicant_qualifications').val(applicant.applicant_qualifications);
-//     $('#preferred_roles').val(applicant.preferred_roles);
-//
-// }
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -19,7 +10,8 @@ if (project_id) {
     console.log("id in js is currently: ",project_id);
     $('#project_id').val(project_id);
 }
-
+//this part handles the error messages from frontend part
+// hightlights the box if it has an error
 if (error_message) {
     if (error_message.includes('applicant_name')) {
         $('#applicant_name').addClass('is-invalid text-danger');
@@ -41,6 +33,7 @@ if (error_message) {
     $('#error_message').text(output.substring(0, output.length - 2));
 }
 
+//handles the error message and submits the page if it is successful
 
 $('form').on('submit', function () {
     let errorMessage = null
@@ -48,6 +41,7 @@ $('form').on('submit', function () {
     $.each($('input,textarea'), function () {
         $(this).removeClass('is-invalid text-danger')
     });
+    //checks for applicant names
 
     if (!$('#applicant_name,textarea').val()) {
         errorMessage = "Name cannot be empty."
@@ -56,7 +50,7 @@ $('form').on('submit', function () {
 
         return false;
     }
-
+//checks for applicants email and it's pattern
     if (!$('#applicant_email,textarea').val()) {
         errorMessage = "Email cannot be empty."
         $('#applicant_email').addClass('is-invalid text-danger');
@@ -74,6 +68,7 @@ $('form').on('submit', function () {
 
         return false;
     }
+    //checks for applicant qualifications
 
     if (!$('#applicant_qualifications,textarea').val()) {
         errorMessage = "Please provide your qualifications."
@@ -82,6 +77,7 @@ $('form').on('submit', function () {
 
         return false;
     }
+    //cheecks for applicants name length
 
     if ($('#applicant_name,textarea').val().length < 3) {
         errorMessage = "The name filed must be at least 3 characters long."
@@ -90,6 +86,8 @@ $('form').on('submit', function () {
 
         return false;
     }
+    //cheecks for applicants qualifications length
+
 
     if ($('#applicant_qualifications,textarea').val().length < 3) {
         errorMessage = "The qualifications filed must be at least 3 characters long."
@@ -98,6 +96,7 @@ $('form').on('submit', function () {
 
         return false;
     }
+    //    //cheecks for applicants preferred roles
 
     if (!$('#preferred_roles').val()) {
         errorMessage = "Provide some of your preferred roles"
@@ -115,7 +114,7 @@ $('form').on('submit', function () {
 
         return false;
     }
-
+  //user has to agree to submit the application
     if (!($('#checkBox').is(':checked'))) {
         errorMessage = "You must agree to submit the application."
         $('#error_message').text(errorMessage);

@@ -1,0 +1,50 @@
+body{
+    background-color: var(--columbia-blue);
+}
+
+#footer{
+    height: 80px;
+    background-color: var(--burnt-sienna);
+    color: var(--platinum);
+    text-align: center;
+    padding-top: 10px;
+    font-family: sans-serif;
+}
+
+.nav-items{
+    float: right;
+    margin-left: 40%;
+}
+
+.nav-inner{
+    color:var(--platinum);
+    font-size: 1.3rem;
+    font-family: 'Limelight', cursive;
+}
+
+.navbar-brand img{
+    color: var(--trypan-blue-2);
+}
+
+#aboutUs p{
+    font-family: sans-serif;
+    font-size: 1.3rem;
+}
+
+#aboutUs h1{
+    padding-top: 2%;
+}
+
+#carousel img{
+    height: 380px;
+    max-width: 55%;
+    align-content: center;
+    margin-right: 30%;
+    margin-left: 20%;
+}
+
+
+.about{
+    padding-left: 10%;
+    padding-right: 10%;
+}

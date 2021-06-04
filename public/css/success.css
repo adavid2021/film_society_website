@@ -1,9 +1,5 @@
-/*#successText {*/
-/*    max-height: 80%;*/
-/*    !*margin-outside: 90px;*!*/
-/*}*/
-:root{
 
+:root{
     --burnt-sienna: #dd6e42ff;
     --dutch-white: #e8dab2ff;
     --cadet: #364b52;
@@ -20,6 +16,7 @@
     --dodger-blue: #4895efff;
     --vivid-sky-blue: #4cc9f0ff;
 }
+
 .bg-primary{
     height: 30rem;
     width: 100%;
@@ -28,12 +25,12 @@
 .card-body{
     text-align: center;
     justify-content: center;
-    margin-top: 25%;
+    margin-top: 20%;
 }
 
 .success-card{
     font-family: sans-serif;
-    margin-bottom: 30%;
+    margin-bottom: 9%;
 }
 
 .success-card h5{

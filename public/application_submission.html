@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Home</title>
 
-    <link rel="stylesheet" href="css/app_submit.css">
 
     <!--    Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
@@ -14,6 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/app_submit.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/Header-Footer.css">
 
     <!--    Google font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -55,14 +57,9 @@
 </nav>
 
 
-<section id="infoBox">
-    <div class="row justify-content-center mt-3">
-        <div class="card text-white mt-4 mb-3"
-             style="max-width: 40%; text-align: center; background-color: var(--dodger-blue)">
-            <h3>Application submission page</h3>
-        </div>
-
-    </div>
+<section id="infoBox" style="text-align: center;">
+    <div>
+        <h1 style="font-family: 'Limelight', cursive;">Welcome to Application Submission</h1>
 
     </div>
 </section>
@@ -99,7 +96,7 @@
 
                         <div class="row mb-3 mt-3">
                             <div class="col-2" style="white-space: nowrap"><label for="preferred_roles"><b>Preferred Roles:</b></label></div>
-                            <div class="col-2"><input class="form-control text" style="width: 500px"
+                            <div class="col-2"><input class="form-control text" style="max-width:100%"
                                                       placeholder="write your preferred roles (separated by spaces)"
                                                       type="text" name="preferred_roles" id="preferred_roles"></div>
                         </div>
@@ -119,7 +116,7 @@
 
                         <input type="hidden" name="project_id" id="project_id">
 
-                        <div class="mb-3" style="margin-left: 40%">
+                        <div class="mb-3" style="margin-left: 30%">
                             <button type="submit" class="btn btn-light"
                                     style="width: 50%; background-color: var(--burnt-sienna); color: white">Submit
                                 Application

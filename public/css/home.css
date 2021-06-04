@@ -17,9 +17,6 @@
     --vivid-sky-blue: #4cc9f0ff;
 }
 
-body{
-    background-color: #b3c5cd;
-}
 #carousel{
     /*padding-top: 5%;*/
 }
@@ -39,31 +36,12 @@ body{
     margin-right: 30%;
     margin-left: 20%;
 }
-#footer{
-    height: 80px;
-    background-color: var(--burnt-sienna);
-    color: var(--platinum);
-    text-align: center;
-    padding-top: 10px;
-    font-family: sans-serif;
-}
-
-.nav-items{
-    float: right;
-    margin-left: 40%;
-}
-
-.nav-inner{
-    color:var(--platinum);
-    font-size: 1.3rem;
-    font-family: 'Limelight', cursive;
-}
 
 .about{
     padding-left: 10%;
     padding-right: 10%;
 }
 
-.navbar-brand img{
-    color: var(--trypan-blue-2);
-}
+/*.navbar-brand img{*/
+/*    color: var(--trypan-blue-2);*/
+/*}*/

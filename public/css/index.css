@@ -1,20 +1,21 @@
 :root{
-
-    --burnt-sienna: #dd6e42ff;
+    --burnt-sienna: #dd6e42;
     --dutch-white: #e8dab2ff;
     --cadet: #4f6d7aff;
-    --columbia-blue: #c4dde9;
+    --columbia-blue: #b5cad2;
+    --columbia-blue4: #063041;
     --platinum: #eaeaeaff;
     --flickr-pink: #f72585ff;
     --byzantine: #b5179eff;
     --purple: #7209b7ff;
     --purple-2: #560badff;
     --trypan-blue: #480ca8ff;
-    --trypan-blue-2: #3a0ca3;
+    --trypan-blue-2: #3a0ca3ff;
     --persian-blue: #3f37c9ff;
     --ultramarine-blue: #4361eeff;
     --dodger-blue: #4895efff;
     --vivid-sky-blue: #4cc9f0ff;
+    --bg-blue: #e5edf1;
 }
 
 .even_row {
@@ -35,9 +36,9 @@
 
 }
 
-#footer {
-    background-color: var(--burnt-sienna);
-}
+/*#footer {*/
+/*    background-color: var(--burnt-sienna);*/
+/*}*/
 
 #filters .form-check-input{
     width: 20px;
@@ -54,11 +55,17 @@
     padding-bottom: 20px;
 }
 
-#footer{
-    height: 80px;
-    background-color: var(--burnt-sienna);
-    color: var(--platinum);
-    text-align: center;
-    padding-top: 10px;
-    font-family: sans-serif;
+/*#footer{*/
+/*    height: 80px;*/
+/*    background-color: var(--burnt-sienna);*/
+/*    color: var(--platinum);*/
+/*    text-align: center;*/
+/*    padding-top: 10px;*/
+/*    font-family: sans-serif;*/
+/*}*/
+
+#infoBox h1{
+    font-family: 'Limelight', cursive;
+    font-size: 1.5rem;
+    margin-top: 2%;
 }

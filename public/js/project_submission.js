@@ -1,3 +1,5 @@
+//checks for error messages if the form is empty or not and if length is less than 3 or not for name creater name,
+// synopsis and for role descriptions sections
 $('form').on('submit', function (event) {
     let errorMessage = null
 
@@ -46,7 +48,7 @@ $('form').on('submit', function (event) {
 
         return false;
     }
-
+//checks for correct email formating
     var email_pattern = /[a-z]+@[a-z]+\.[a-z]+/i
     // the email must follw the above standard email pattern
     if (!(email_pattern.test($('#creator_email,textarea').val()))) {

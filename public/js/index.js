@@ -29,19 +29,13 @@ function showList(projects) {
             return projects[(idx * 2) + 1]._id;
         })
         .append("<div class='row'></div>");
-
-    // $('#left_list .row').addClass(function (idx) {
-    //     if (idx % 2 === 0) {
-    //         return 'even_row';
-    //     } else {
-    //         return 'odd_row';
-    //     }
-    // });
+    //lists for the current projects
+    //the new project shows up in the first list
 
     $('#left_list .row')
         .append('<div class="card text-white" style="background-color: var(--cadet)">' +
             '  <div class="card-body">' +
-            '    <h5 class="card-title title_left"></h5>' +
+            '    <h3 class="card-title title_left"></h3>' +
             '    <div class="row justify-content-between"></div>' +
             '       <div class="btn-group mybuttons_left" role="group">' +
             '    </div>' +
@@ -51,7 +45,7 @@ function showList(projects) {
     $('#right_list .row')
         .append('<div class="card text-white" style="background-color: var(--cadet)">' +
             '  <div class="card-body">' +
-            '    <h5 class="card-title title_right"></h5>' +
+            '    <h3 class="card-title title_right"></h3>' +
             '    <div class="row justify-content-between"></div>' +
             '       <div class="btn-group mybuttons_right" role="group">' +
             '    </div>' +
@@ -136,6 +130,7 @@ $(document).ready(function () {
     });
 });
 
+//filter buttons for checkbox
 function recheckBoxes(f){
     if (f.includes("actor")){
         $('#actor_checkbox').prop("checked",true);
