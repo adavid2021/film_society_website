@@ -43,12 +43,15 @@ app.listen(3000, function () {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/public/current_projects.html");
 });
 
+app.get('/current_projects', function (req, res) {
+    res.sendFile(__dirname + "/public/current_projects.html");
+});
 
 // app.get('/', function (req, res) {
-//     res.sendFile(__dirname + "/public/home.html");
+//     res.sendFile(__dirname + "/public/current_projects.html");
 // });
 
 app.get('/project_detail', function (req, res) {

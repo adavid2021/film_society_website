@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/home.css">
 
     <!--    Bootstrap-->
@@ -24,118 +20,76 @@
     <!--    fontawesome-->
     <script src="https://kit.fontawesome.com/e5b5eed843.js" crossorigin="anonymous"></script>
 
+    <!--    Google jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!--    Limelight Font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 
-    <!--    Google jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script src="js/index.js" defer></script>
+    <!--    <script src="js/index.js" defer></script>-->
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark cardstrading" style="background-color: var(--burnt-sienna);">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/1200px-Clark_University_seal.svg.png"alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
-        <a class="navbar-brand" style="font-family: 'Limelight', cursive; font-size: 2.0rem;" href="#">Clark Film Society</a>
+        <a class="navbar-brand" href="#"><img src="img/1200px-Clark_University_seal.svg.png" alt="" width="50"
+                                              height="50" class="d-inline-block align-text-top"></a>
+        <a class="navbar-brand" style="font-family: 'Limelight', cursive; font-size: 2.0rem;" href="#">Clark Film
+            Society</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav nav-items">
-                <a class="nav-link nav-inner" aria-current="page" href="/home.html">Home</a>
-                <a class="nav-link nav-inner" href="/index.html">Current Projects</a>
-                <a class="nav-link nav-inner" href="/project_submission.html">Create a New Project</a>
+                <a class="nav-link nav-inner" href="/">Home</a>
+                <a class="nav-link nav-inner" href="/current_projects">Current Projects</a>
+                <a class="nav-link nav-inner" href="/project_submission">Create a New Project</a>
             </div>
         </div>
     </div>
 </nav>
 
+<section id="aboutUs" style="text-align: center;">
+    <div>
+        <h1 style="font-family: 'Limelight', cursive;">Learn More About Us</h1>
+        <p class="about">Clark University Film Society was started to help the creative minds bring their ideas to life!
+            One of the hardest things about making a student film is finding actors and crew members. We have made it
+            easier for you. Simply create a new project posting and anyone who is interested can apply for the roles
+            they want!
+        </p>
+    </div>
+</section>
 
-<section id="filters">
-<!--    <div class="input-group mt-4 mb-3 d-flex justify-content-end">-->
-<!--        <a href="/project_submission.html" class="btn rounded"-->
-<!--           style="background-color: var(&#45;&#45;burnt-sienna); color: white">Create a New Project</a>-->
-<!--    </div>-->
-
-    <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10 col-sm-10">
-            <div class="card text-white mt-3 mb-3" style="background-color: #354950FF">
-                <div class="card-body">
-                    <h5 class="card-title">Filter Projects By Available Roles</h5>
-                    <p class="card-text">Select the roles that you are interested in</p>
-
-                    <div class="row justify-content-between py-3 px-3">
-                        <div class="col-2">
-                            <div class="form-check">
-                                <input class="form-check-input pl-2" type="checkbox" id="actor_checkbox" value="actor">
-                                <label class="form-check-label pr-2" for="actor_checkbox">Actor</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="director_checkbox"
-                                       value="director">
-                                <label class="form-check-label pr-2" for="director_checkbox">Director</label>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="cinematographer_checkbox"
-                                       value="cinematographer">
-                                <label class="form-check-label pr-2"
-                                       for="cinematographer_checkbox">Cinematographer</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="producer_checkbox"
-                                       value="producer">
-                                <label class="form-check-label pr-2" for="producer_checkbox">Producer</label>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="editor_checkbox"
-                                       value="editor">
-                                <label class="form-check-label pr-2" for="editor_checkbox">Editor</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input pl-2" type="checkbox" id="screenwriter_checkbox"
-                                       value="screenwriter">
-                                <label class="form-check-label pr-2" style="margin-right: 10px" for="screenwriter_checkbox">Screenwriter</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="input-group mb-3">
-                            <button class="btn btn-light" style="background-color: var(--burnt-sienna); color: white"
-                                    onclick="searchProjects()">Search
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<section id="carousel">
+    <div id="carouselExampleControls" class="carousel slide pb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="img/FilmSocietyHome1.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/FilmSocietyHome2.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/FilmSocietyHome3.jpeg" class="d-block w-100" alt="...">
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </section>
-
-<section id="project_section">
-    <div class="row justify-content-center">
-        <div class="col-lg-5 col-md-11">
-            <ul id="left_list" class="list-group">
-
-            </ul>
-        </div>
-        <div class="col-lg-5 col-md-11">
-            <ul id="right_list" class="list-group">
-
-            </ul>
-        </div>
-    </div>
-</section>
-
-<p class="pad"></p>
 
 <section id="footer">
-    <p style="color: floralwhite;">
+    <p>
         <script defer>
             function getYear() {
                 return (new Date().getFullYear())
@@ -146,5 +100,7 @@
     </p>
 
 </section>
+
+
 </body>
 </html>

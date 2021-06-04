@@ -45,11 +45,9 @@ function load_project(project) {
         `<h6>${project.information[0].film_date}</h6></div>`
 
     )
-    // $("#synopsis").text(project.information[0].synopsis)
-    // $("#starting_date").text(project.information[0].film_date)
 
     $('#available_roles').append(function (idx) {
-        let button_html = `<p>Available Roles:</p>`;
+        let button_html = `<h3><b>Available Roles:</b></h3>`;
         const list = project.role_list.split(" ");
         list.forEach(role => {
             if (role) {
@@ -58,56 +56,6 @@ function load_project(project) {
         });
         return button_html
     })
-    // let date = project.information[0].film_date.toString();
-    // // let new_date = date.substring(5, 7) + "-" + date.substring(8, 10) + "-" + date.substring(0, 4);
-    // $("#synopsis").text(project.information[0].synopsis)
-    // $("#starting_date").text(project.information[0].film_date)
-    // $("#role_details").text(project.role_descriptions)
-    //
-
-
-
-    // $('#role_list').empty();
-    //
-    // for (let i = 0; i < r_list.length; i++) {
-    //     $('#role_list').append("<li class='list-group-item py-2'></li>").append('<p class="pad"></p>');
-    // }
-    //
-    // $('#role_list li')
-    //     .append("<div class='row justify-content-between'></div>");
-    //
-    // $('#role_list .row').addClass(function (idx) {
-    //     if (idx % 2 === 0) {
-    //         return 'even_row';
-    //     } else {
-    //         return 'odd_row';
-    //     }
-    // });
-    //
-    // $('#role_list .row')
-    //     .append(
-    //         '<div class="card text-success border-success mb-3">' +
-    //         '  <div class="card-body">' +
-    //         '    <h5 class="role_name"></h5>' +
-    //         '  </div>' +
-    //         '</div>')
-
-    // for (let i = 0; i < applicant_list.length; i++) {
-    //     $('.applicants').append("<li class='list-group-item'></li>");
-    // }
-    // $('.role_name').append(function (idx) {
-    // $('#role_list .row .card-body').append(function (idx) {
-    //     currentIndex = idx;
-    //     return ('<div class="row">' +
-    //             '<div class="col-lg-9 col-md-7 justify-content-center">'+
-    //         `<h4><b>${r_list[idx]}</b></h4>` +
-    //         '</div>' +
-    //         '<div class="col-lg-3 col-md-5">'+
-    //         `<a class="btn btn-outline-success" href="${applyToRole(project.role_list.split(' '))}" style="width: 100%">Apply</a>`+
-    //         '</div>' +
-    //         '</div>'
-    //     )
-    // });
 
     applicant_list.forEach(applicant => {
         $('#applicant_list').append(

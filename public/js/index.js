@@ -72,7 +72,7 @@ function showList(projects) {
         const list = projects[idx * 2].role_list.split(" ");
         list.forEach(role => {
             if (role) {
-                button_html += `<div class="card card-header" style="padding: 5px; background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</div>`
+                button_html += `<div class="card card-header" style="white-space: nowrap; padding: 5px; background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</div>`
             }
         });
         return button_html
@@ -96,7 +96,7 @@ function showList(projects) {
         const list = projects[(idx * 2) + 1].role_list.split(" ");
         list.forEach(role => {
             if (role) {
-                button_html += `<div class="card card-header" style="padding: 5px; background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</div>`
+                button_html += `<div class="card card-header" style="white-space: nowrap; padding: 5px; background-color: white; color: var(--burnt-sienna); border-color: var(--burnt-sienna); border-width: 2px">${role}</div>`
             }
         });
         return button_html
@@ -121,11 +121,12 @@ $(document).ready(function () {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const filters = urlParams.get('filters');
-    console.log(filters);
+    // console.log(filters);
     $.getJSON("/get_all_projects").done(function (data) {
         if (data.message === "success") {
             console.log(data["data"]);
             if (filters) {
+                recheckBoxes(filters);
                 data = filterData(data, filters);
                 showList(data.sort((a, b) => (a.title > b.title) ? 1 : -1));
             } else {
@@ -135,27 +136,58 @@ $(document).ready(function () {
     });
 });
 
+function recheckBoxes(f){
+    if (f.includes("actor")){
+        $('#actor_checkbox').prop("checked",true);
+    }
+    if (f.includes("cinematographer")){
+        $('#cinematographer_checkbox').prop("checked",true);
+    }
+    if (f.includes("director")){
+        $('#director_checkbox').prop("checked",true);
+    }
+    if (f.includes("editor")){
+        $('#editor_checkbox').prop("checked",true);
+    }
+    if (f.includes("screenwriter")){
+        $('#screenwriter_checkbox').prop("checked",true);
+    }
+    if (f.includes("producer")){
+        $('#producer_checkbox').prop("checked",true);
+    }
+}
+
+// determines if a project is already in the list of all projects
+function dataContainsThisProject(new_project, allData) {
+    let output = false;
+    allData.forEach(d=>{
+        if(d.title === new_project.title){
+            output = true;
+        }
+    })
+    return output;
+}
+
 function filterData(data, filters) {
-    console.log(data["data"]);
     let newData = [];
 
     data["data"].forEach(d => {
         if (filters.includes("actor") && d.role_list.includes("actor")) {
             newData.push(d)
         }
-        if (filters.includes("cinematographer") && d.role_list.includes("cinematographer")) {
+        if (!dataContainsThisProject(d,newData) && filters.includes("cinematographer") && d.role_list.includes("cinematographer")) {
             newData.push(d)
         }
-        if (filters.includes("director") && d.role_list.includes("director")) {
+        if (!dataContainsThisProject(d,newData) && filters.includes("director") && d.role_list.includes("director")) {
             newData.push(d)
         }
-        if (filters.includes("editor") && d.role_list.includes("editor")) {
+        if (!dataContainsThisProject(d,newData) && filters.includes("editor") && d.role_list.includes("editor")) {
             newData.push(d)
         }
-        if (filters.includes("producer") && d.role_list.includes("producer")) {
+        if (!dataContainsThisProject(d,newData) && filters.includes("producer") && d.role_list.includes("producer")) {
             newData.push(d)
         }
-        if (filters.includes("screenwriter") && d.role_list.includes("screenwriter")) {
+        if (!dataContainsThisProject(d,newData) && filters.includes("screenwriter") && d.role_list.includes("screenwriter")) {
             newData.push(d)
         }
     })
@@ -186,5 +218,5 @@ function searchProjects() {
         current_filters += "screenwriter"
     }
 
-    location.href = "index.html?filters=" + current_filters;
+    location.href = "current_projects.html?filters=" + current_filters;
 }
