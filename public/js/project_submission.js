@@ -148,43 +148,6 @@ $('form').on('submit', function (event) {
     }
 });
 
-// function projectInfo() {
-//     let outputLink = "/project_failure?";
-//     outputLink += "checked=";
-//     if ($('#actor_ch').prop('checked')) {
-//         outputLink += "0";
-//     }
-//     if ($('#cinematographer_ch').prop('checked')) {
-//         outputLink += "1";
-//     }
-//     if ($('#editor_ch').prop('checked')) {
-//         outputLink += "2";
-//     }
-//     if ($('#director_ch').prop('checked')) {
-//         outputLink += "3";
-//     }
-//     if ($('#producer_ch').prop('checked')) {
-//         outputLink += "4";
-//     }
-//     if ($('#screenwriter_ch').prop('checked')) {
-//         outputLink += "5";
-//     }
-//     outputLink += "&name=" + $('#creator_name,textarea').val() + "&email=" + $('#creator_email,textarea').val() + "&date="
-//         + $('#shooting_date,textarea').val();
-//
-//     if ($('#paidRadio1').prop('checked')) {
-//         outputLink += "&isPaid=yes";
-//     } else {
-//         outputLink += "&isPaid=no";
-//     }
-//
-//     outputLink += "&synopsis=" + $('#synopsis').val() + "&role_descriptions=" + $('#role_des,textarea').val()
-//
-//     return `<a class="btn btn-success" href=${outputLink}>NEW SUBMISSION</a>`;
-// }
-
-// takes in a single checkbox words, based on input determine which words to look for in the role description
-// throw an error if the specified key word is not present
 function checkForRoles(role) {
     const text = $('textarea#role_des').val();
 

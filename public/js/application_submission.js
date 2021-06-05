@@ -135,8 +135,6 @@ function formattedCorrectly() {
             "Screenwriter"]
 
     let i_string_list = [];
-
-    // console.log("input string: ", input_string);
     input_string.forEach(input => {
         correct_role_strings.forEach(role => {
             // console.log(input, " vs ", role);
@@ -147,17 +145,12 @@ function formattedCorrectly() {
     })
     console.log("i list ", i_string_list);
     console.log("input ", input_string);
-
-
     let out = true;
-
     for(let i = 0; i < input_string.length; i++){
         if (input_string[i] !== i_string_list[i]){
             out = false;
         }
     }
-
-    // console.log("i string list: ", i_string_list);
     console.log("out ", out);
 
     return (out);

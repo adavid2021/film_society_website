@@ -163,9 +163,9 @@ function dataContainsThisProject(new_project, allData) {
     return output;
 }
 
+//filters the data based on checkbox clicked
 function filterData(data, filters) {
     let newData = [];
-
     data["data"].forEach(d => {
         if (filters.includes("actor") && d.role_list.includes("actor")) {
             newData.push(d)
@@ -190,6 +190,7 @@ function filterData(data, filters) {
     return newData
 }
 
+//search project function implementation
 function searchProjects() {
     // sent to server trying to get information from server based on user input
     let current_filters = "";
